@@ -12,7 +12,7 @@ import '/_102053_/l2/molecules/grouptriggeraction/ml-button-standard';
 export class DesignShowcase extends StateLitElement {
 
   // ── State ──────────────────────────────────────────────────────────────────
-  @state() designModel: 'material' | 'brutalism' = 'material';
+  @state() designModel: 'material' | 'brutalism' | 'flat' | 'glass' = 'material';
   @state() darkMode = false;
 
   // ── Input demo state ───────────────────────────────────────────────────────
@@ -26,7 +26,7 @@ export class DesignShowcase extends StateLitElement {
   @state() toggleDisabled = true;
 
   // ── Design model switcher ──────────────────────────────────────────────────
-  private setDesign(model: 'material' | 'brutalism') {
+  private setDesign(model: 'material' | 'brutalism' | 'flat' | 'glass') {
     this.designModel = model;
   }
 
@@ -52,7 +52,19 @@ export class DesignShowcase extends StateLitElement {
             class="px-4 py-2 text-sm font-bold cursor-pointer
                    ${this.designModel === 'material' ? 'ml-button ml-button-primary' : 'ml-button ml-button-secondary'}"
             @click=${() => this.setDesign('material')}>
-            Material Design
+            Material
+          </button>
+          <button
+            class="px-4 py-2 text-sm font-bold cursor-pointer
+                   ${this.designModel === 'flat' ? 'ml-button ml-button-primary' : 'ml-button ml-button-secondary'}"
+            @click=${() => this.setDesign('flat')}>
+            Flat
+          </button>
+          <button
+            class="px-4 py-2 text-sm font-bold cursor-pointer
+                   ${this.designModel === 'glass' ? 'ml-button ml-button-primary' : 'ml-button ml-button-secondary'}"
+            @click=${() => this.setDesign('glass')}>
+            Glass
           </button>
           <button
             class="px-4 py-2 text-sm font-bold cursor-pointer
@@ -381,7 +393,12 @@ export class DesignShowcase extends StateLitElement {
       <div data-design="${this.designModel}"
            data-mode="${this.darkMode ? 'dark' : 'light'}"
            class="min-h-screen"
-           style="background: var(--ml-surface); transition: background 200ms;">
+           style="background: ${this.designModel === 'glass'
+             ? (this.darkMode
+               ? 'linear-gradient(135deg, #0f172a 0%, #1e1b4b 30%, #172554 60%, #0c4a6e 100%)'
+               : 'linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 25%, #ddd6fe 50%, #e0f2fe 75%, #cffafe 100%)')
+             : 'var(--ml-surface)'};
+           transition: background 200ms;">
 
         ${this.renderTopBar()}
 
@@ -391,7 +408,7 @@ export class DesignShowcase extends StateLitElement {
           <div class="flex items-center gap-3 px-4 py-3 mb-4"
                style="background: var(--ml-primary-dim); border: var(--ml-border-width) var(--ml-border-style) var(--ml-primary); border-radius: var(--ml-radius-sm);">
             <span class="text-sm font-bold" style="color: var(--ml-primary); font-family: var(--ml-font-family);">
-              Modelo ativo: ${this.designModel === 'material' ? 'Material Design' : 'Brutalism'}
+              Modelo ativo: ${{ material: 'Material Design', flat: 'Flat Design', glass: 'Glassmorphism', brutalism: 'Brutalism' }[this.designModel]}
               ${this.darkMode ? ' (Dark)' : ' (Light)'}
             </span>
           </div>
