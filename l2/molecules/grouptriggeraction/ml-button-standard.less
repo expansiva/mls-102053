@@ -2,6 +2,47 @@
 
 grouptriggeraction--ml-button-standard {
 
-// Themed via design-showcase.less semantic classes
+  .ml-button {
+    font-family: var(--ml-font-family);
+    font-weight: var(--ml-font-weight-medium);
+    border-radius: var(--ml-radius-sm);
+    transition: background var(--ml-transition), box-shadow var(--ml-transition), border-color var(--ml-transition);
+    backdrop-filter: var(--ml-backdrop-blur, none) var(--ml-backdrop-saturate, none);
+    cursor: pointer;
+    &:focus { outline: none; box-shadow: 0 0 0 var(--ml-focus-ring-width) var(--ml-focus-ring-color); }
+  }
+  .ml-button-primary {
+    background: var(--ml-primary); color: var(--ml-on-primary);
+    border: var(--ml-border-width) var(--ml-border-style) var(--ml-primary);
+    box-shadow: var(--ml-shadow-1);
+    &:hover { box-shadow: var(--ml-shadow-2); filter: brightness(1.1); }
+    &:active { filter: brightness(0.9); box-shadow: var(--ml-shadow-0); }
+  }
+  .ml-button-secondary {
+    background: var(--ml-surface); color: var(--ml-on-surface);
+    border: var(--ml-border-width) var(--ml-border-style) var(--ml-outline-variant);
+    &:hover { background: var(--ml-surface-dim); }
+    &:active { background: var(--ml-surface-dim); filter: brightness(0.95); }
+  }
+  .ml-button-danger {
+    background: var(--ml-error); color: var(--ml-on-error);
+    border: var(--ml-border-width) var(--ml-border-style) var(--ml-error);
+    box-shadow: var(--ml-shadow-1);
+    &:hover { box-shadow: var(--ml-shadow-2); filter: brightness(1.1); }
+    &:active { filter: brightness(0.9); box-shadow: var(--ml-shadow-0); }
+  }
+  .ml-button-ghost {
+    background: transparent; color: var(--ml-on-surface);
+    border: var(--ml-border-width) var(--ml-border-style) transparent;
+    &:hover { background: var(--ml-surface-dim); }
+    &:active { background: var(--ml-surface-dim); filter: brightness(0.95); }
+  }
+  .ml-button-link {
+    background: transparent; color: var(--ml-primary);
+    border: var(--ml-border-width) var(--ml-border-style) transparent;
+    &:hover { text-decoration: underline; }
+    &:active { filter: brightness(0.9); }
+  }
+  .ml-disabled { opacity: var(--ml-disabled-opacity); cursor: not-allowed; pointer-events: none; }
 
- }
+}

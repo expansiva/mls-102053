@@ -2,6 +2,26 @@
 
 groupenterboolean--ml-toggle-switch {
 
-// Themed via design-showcase.less semantic classes
+  .ml-text { color: var(--ml-on-surface); font-family: var(--ml-font-family); }
+  .ml-label { font-family: var(--ml-font-family); font-weight: var(--ml-font-weight-medium); color: var(--ml-on-surface); }
+  .ml-helper { color: var(--ml-on-surface-muted); font-family: var(--ml-font-family); }
+  .ml-error-text { color: var(--ml-error); font-family: var(--ml-font-family); }
 
- }
+  .ml-toggle-track {
+    background: var(--ml-outline-variant);
+    border: var(--ml-border-width) var(--ml-border-style) var(--ml-outline-variant);
+    border-radius: var(--ml-radius-full);
+    transition: background var(--ml-transition), border-color var(--ml-transition);
+    &:focus { outline: none; box-shadow: 0 0 0 var(--ml-focus-ring-width) var(--ml-focus-ring-color); }
+  }
+  .ml-toggle-track-on { background: var(--ml-primary); border-color: var(--ml-primary); }
+  .ml-toggle-track-error { border-color: var(--ml-outline-error); }
+  .ml-toggle-thumb {
+    background: var(--ml-surface);
+    border-radius: var(--ml-radius-full);
+    transition: transform var(--ml-transition);
+    box-shadow: var(--ml-shadow-1);
+  }
+  .ml-disabled { opacity: var(--ml-disabled-opacity); cursor: not-allowed; pointer-events: none; }
+
+}

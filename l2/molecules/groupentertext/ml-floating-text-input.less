@@ -2,6 +2,31 @@
 
 groupentertext--ml-floating-text-input {
 
-// Themed via design-showcase.less semantic classes
+  .ml-text { color: var(--ml-on-surface); font-family: var(--ml-font-family); }
+  .ml-text-muted { color: var(--ml-on-surface-muted); font-family: var(--ml-font-family); }
+  .ml-text-faint { color: var(--ml-on-surface-faint); font-family: var(--ml-font-family); }
+  .ml-label { font-family: var(--ml-font-family); font-weight: var(--ml-font-weight-medium); color: var(--ml-on-surface); }
+  .ml-helper { color: var(--ml-on-surface-muted); font-family: var(--ml-font-family); }
+  .ml-error-text { color: var(--ml-error); font-family: var(--ml-font-family); }
 
- }
+  .ml-input-container {
+    background: var(--ml-surface);
+    border: var(--ml-border-width) var(--ml-border-style) var(--ml-outline-variant);
+    border-radius: var(--ml-radius-sm);
+    transition: border-color var(--ml-transition), box-shadow var(--ml-transition);
+    backdrop-filter: var(--ml-backdrop-blur, none) var(--ml-backdrop-saturate, none);
+    &:focus-within {
+      border-color: var(--ml-outline-focus);
+      box-shadow: 0 0 0 var(--ml-focus-ring-width) var(--ml-focus-ring-color);
+    }
+  }
+  .ml-input-container-error { border-color: var(--ml-outline-error) !important; }
+  .ml-input {
+    color: var(--ml-on-surface);
+    font-family: var(--ml-font-family);
+    &::placeholder { color: var(--ml-on-surface-faint); }
+  }
+  .ml-disabled { opacity: var(--ml-disabled-opacity); cursor: not-allowed; pointer-events: none; }
+  .ml-spinner { border: 2px solid var(--ml-outline-variant); border-top-color: var(--ml-on-surface); border-radius: var(--ml-radius-full); }
+
+}

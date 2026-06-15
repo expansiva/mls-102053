@@ -2,6 +2,26 @@
 
 groupexpandcontent--ml-accordion {
 
-// Themed via design-showcase.less semantic classes
+  .ml-text-muted { color: var(--ml-on-surface-muted); font-family: var(--ml-font-family); }
+  .ml-label { font-family: var(--ml-font-family); font-weight: var(--ml-font-weight-medium); color: var(--ml-on-surface); }
 
- }
+  .ml-accordion-header {
+    background: var(--ml-surface);
+    color: var(--ml-on-surface);
+    border: var(--ml-border-width) var(--ml-border-style) var(--ml-outline-variant);
+    border-radius: var(--ml-radius-sm);
+    font-family: var(--ml-font-family);
+    font-weight: var(--ml-font-weight-medium);
+    transition: background var(--ml-transition), border-color var(--ml-transition), box-shadow var(--ml-transition);
+    backdrop-filter: var(--ml-backdrop-blur, none) var(--ml-backdrop-saturate, none);
+    &:hover { background: var(--ml-surface-dim); }
+    &:focus { outline: none; box-shadow: 0 0 0 var(--ml-focus-ring-width) var(--ml-focus-ring-color); }
+  }
+  .ml-accordion-header-open { border-color: var(--ml-primary); background: var(--ml-primary-dim); color: var(--ml-primary); }
+  .ml-accordion-content { color: var(--ml-on-surface); font-family: var(--ml-font-family); }
+  .ml-accordion-chevron { color: var(--ml-on-surface-muted); transition: transform var(--ml-transition), color var(--ml-transition); }
+  .ml-accordion-chevron-open { color: var(--ml-primary); }
+  .ml-disabled { opacity: var(--ml-disabled-opacity); cursor: not-allowed; pointer-events: none; }
+  .ml-skeleton { background: var(--ml-surface-dim); border-radius: var(--ml-radius-sm); }
+
+}
