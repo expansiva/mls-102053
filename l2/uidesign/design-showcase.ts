@@ -1,4 +1,4 @@
-/// <mls fileReference="_102053_/l2/ui-design/design-showcase.ts" enhancement="_102020_/l2/enhancementAura"/>
+/// <mls fileReference="_102053_/l2/uidesign/design-showcase.ts" enhancement="_102020_/l2/enhancementAura"/>
 
 import { html, nothing } from 'lit';
 import { customElement, state } from 'lit/decorators.js';
@@ -8,7 +8,7 @@ import '/_102053_/l2/molecules/groupenterboolean/ml-toggle-switch';
 import '/_102053_/l2/molecules/groupexpandcontent/ml-accordion';
 import '/_102053_/l2/molecules/grouptriggeraction/ml-button-standard';
 
-@customElement('ui-design--design-showcase')
+@customElement('uidesign--design-showcase')
 export class DesignShowcase extends StateLitElement {
 
   // ── State ──────────────────────────────────────────────────────────────────
