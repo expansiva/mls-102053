@@ -13,7 +13,7 @@ import '/_102054_/l2/molecules/groupenterboolean/ml-toggle-switch';
 import '/_102054_/l2/molecules/groupexpandcontent/ml-accordion';
 import '/_102054_/l2/molecules/grouptriggeraction/ml-button-standard';
 
-@customElement('glassshowcase--checkout')
+@customElement('glassshowcase--checkout-102053')
 export class GlassShowcaseCheckout extends StateLitElement {
   @state() private cardName = '';
   @state() private cardNumber = '';
