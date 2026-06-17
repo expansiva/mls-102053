@@ -18,7 +18,7 @@ import '/_102054_/l2/molecules/groupenterboolean/ml-toggle-switch';
 import '/_102054_/l2/molecules/groupexpandcontent/ml-accordion';
 import '/_102054_/l2/molecules/grouptriggeraction/ml-button-standard';
 
-@customElement('glassshowcase--settings')
+@customElement('glassshowcase--settings-102053')
 export class GlassShowcaseSettings extends StateLitElement {
   // Estado observado via delegação (não realimenta as moléculas — apenas registra).
   @state() private dirty = false;
