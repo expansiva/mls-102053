@@ -1,0 +1,85 @@
+/// <mls fileReference="_102053_/l2/glassshowcase/login.less" enhancement="enhancementStyle"/>
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+// =============================================================================
+// GLASS SHOWCASE — LOGIN
+// A página é o contrato de container: fundo escuro/rico para o backdrop-filter
+// das moléculas glass aparecer. Cartão translúcido.
+// =============================================================================
+glassshowcase--login {
+  display: block;
+  font-family: 'Inter', system-ui, sans-serif;
+
+  .page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: radial-gradient(circle at 20% 20%, #4c1d95 0%, transparent 55%),
+      radial-gradient(circle at 80% 70%, #be185d 0%, transparent 50%),
+      linear-gradient(135deg, #0b1220 0%, #1e1b4b 100%);
+    background-attachment: fixed;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 24rem;
+    padding: 2.5rem 2rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+  }
+
+  .brand {
+    color: #c7d2fe;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+  }
+  .title {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+  .subtitle {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.875rem;
+    margin-bottom: 2rem;
+  }
+
+  .fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .row-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+  }
+
+  // botão de submit ocupa a largura do cartão
+  .submit grouptriggeraction--ml-button-standard {
+    display: block;
+  }
+  .submit .glass-btn {
+    width: 100%;
+  }
+
+  .footer {
+    margin-top: 1.5rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.875rem;
+  }
+}
