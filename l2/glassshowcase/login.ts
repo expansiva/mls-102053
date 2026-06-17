@@ -14,7 +14,7 @@ import '/_102054_/l2/molecules/groupentertext/ml-floating-text-input';
 import '/_102054_/l2/molecules/groupenterboolean/ml-toggle-switch';
 import '/_102054_/l2/molecules/grouptriggeraction/ml-button-standard';
 
-@customElement('glassshowcase--login')
+@customElement('glassshowcase--login-102053')
 export class GlassShowcaseLogin extends StateLitElement {
   // ── Estado controlado ──────────────────────────────────────────────────────
   @state() private email = '';

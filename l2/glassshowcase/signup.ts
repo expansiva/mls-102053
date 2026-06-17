@@ -12,7 +12,7 @@ import '/_102054_/l2/molecules/groupentertext/ml-floating-text-input';
 import '/_102054_/l2/molecules/groupenterboolean/ml-toggle-switch';
 import '/_102054_/l2/molecules/grouptriggeraction/ml-button-standard';
 
-@customElement('glassshowcase--signup')
+@customElement('glassshowcase--signup-102053')
 export class GlassShowcaseSignup extends StateLitElement {
   @state() private name = '';
   @state() private email = '';
