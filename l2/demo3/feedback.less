@@ -1,0 +1,26 @@
+/// <mls fileReference="_102053_/l2/demo3/feedback.less" enhancement="enhancementStyle"/>
+
+demo3--feedback-102053 {
+  // >>> LAYOUT-BLOCK-START
+  display: block;
+  font-family: 'Inter', system-ui, sans-serif;
+  .page { min-height: 100vh; padding: 2.5rem 2rem; }
+  .shell { max-width: 64rem; margin: 0 auto; }
+  .head { text-align: center; margin-bottom: 2.5rem; }
+  .brand { font-weight: 700; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  .title { font-size: 1.625rem; font-weight: 700; margin-bottom: 0.25rem; }
+  .subtitle { font-size: 0.8125rem; }
+  .block { margin-bottom: 2rem; border-radius: 16px; padding: 1.5rem; }
+  .block-title { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+  .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; align-items: start; }
+  // >>> LAYOUT-BLOCK-END
+
+  // >>> THEME-GLASS-START
+  .page { background: radial-gradient(circle at 15% 15%, #4c1d95 0%, transparent 55%), radial-gradient(circle at 85% 85%, #be185d 0%, transparent 50%), linear-gradient(135deg, #0b1220 0%, #1e1b4b 100%); background-attachment: fixed; }
+  .brand { color: #c7d2fe; }
+  .title { color: #ffffff; }
+  .subtitle { color: rgba(255, 255, 255, 0.65); }
+  .block { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+  .block-title { color: rgba(255, 255, 255, 0.55); }
+  // >>> THEME-GLASS-END
+}
