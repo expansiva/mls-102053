@@ -9,10 +9,20 @@ import { customElement } from 'lit/decorators.js';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { propertyDataSource } from '/_102029_/l2/collabDecorators.js';
 import { MoleculeAuraElement } from '/_102033_/l2/moleculeBase.js';
+import { cn } from '/_102053_/l2/molecules/cn.js';
 
 @customElement('grouptriggeraction--ml-button-standard')
 export class ButtonStandardMolecule extends MoleculeAuraElement {
+  // ==========================================================================
+  // SLOT TAGS
+  // ==========================================================================
   slotTags = ['Label', 'Icon'];
+
+  // ==========================================================================
+  // PROPERTIES — From Contract
+  // ==========================================================================
+  @propertyDataSource({ type: String, attribute: 'class-name' })
+  cssClass: string = '';
 
   @propertyDataSource({ type: String })
   size: 'xs' | 'sm' | 'md' | 'lg' = 'md';
@@ -29,6 +39,9 @@ export class ButtonStandardMolecule extends MoleculeAuraElement {
   @propertyDataSource({ type: Boolean })
   loading = false;
 
+  // ==========================================================================
+  // EVENT HANDLERS
+  // ==========================================================================
   private handleActionClick(e: Event) {
     const isDisabled = this.isDisabled();
     if (isDisabled) {
@@ -45,6 +58,9 @@ export class ButtonStandardMolecule extends MoleculeAuraElement {
     );
   }
 
+  // ==========================================================================
+  // HELPERS
+  // ==========================================================================
   private isDisabled(): boolean {
     return this.disabled || this.loading;
   }
@@ -92,14 +108,14 @@ export class ButtonStandardMolecule extends MoleculeAuraElement {
   }
 
   private getVariantClasses(variant: string): string {
-    const variantMap: Record<string, string> = {
+    const baseMap: Record<string, string> = {
       primary: 'ml-button-primary',
       secondary: 'ml-button-secondary',
       danger: 'ml-button-danger',
       ghost: 'ml-button-ghost',
       link: 'ml-button-link',
     };
-    return variantMap[variant] || variantMap.primary;
+    return baseMap[variant] || baseMap.primary;
   }
 
   private getButtonClasses(hasLabel: boolean): string {
@@ -114,6 +130,10 @@ export class ButtonStandardMolecule extends MoleculeAuraElement {
       this.getVariantClasses(variant),
       isDisabled ? 'ml-disabled' : 'cursor-pointer',
     ].filter(Boolean).join(' ');
+  }
+
+  private getSlotClass(tag: string): string {
+    return this.getSlotAttr(tag, 'class') || '';
   }
 
   private getIconClasses(sizeClass: string): string {
@@ -137,6 +157,9 @@ export class ButtonStandardMolecule extends MoleculeAuraElement {
     `;
   }
 
+  // ==========================================================================
+  // RENDER
+  // ==========================================================================
   render() {
     const labelContent = (this.getSlotContent('Label') || '').trim();
     const iconContent = (this.getSlotContent('Icon') || '').trim();
@@ -148,13 +171,13 @@ export class ButtonStandardMolecule extends MoleculeAuraElement {
     const ariaLabel = !hasLabel && hasIcon ? labelContent : undefined;
 
     const iconTemplate = hasIcon
-      ? html`<span class="${this.getIconClasses(sizeClasses.icon)}">${unsafeHTML(iconContent)}</span>`
+      ? html`<span class="${cn(this.getIconClasses(sizeClasses.icon), this.getSlotClass('Icon'))}">${unsafeHTML(iconContent)}</span>`
       : nothing;
 
     const spinnerTemplate = html`<span class="${this.getIconClasses(sizeClasses.spinner)}">${this.renderSpinner(sizeClasses.spinner)}</span>`;
 
     const labelTemplate = hasLabel
-      ? html`<span class="${this.loading && !hasIcon ? 'opacity-0' : ''}">${unsafeHTML(labelContent)}</span>`
+      ? html`<span class="${cn(this.loading && !hasIcon ? 'opacity-0' : '', this.getSlotClass('Label'))}">${unsafeHTML(labelContent)}</span>`
       : nothing;
 
     const labelWithSpinner = html`
@@ -178,7 +201,7 @@ export class ButtonStandardMolecule extends MoleculeAuraElement {
 
     return html`
       <button
-        class="${this.getButtonClasses(hasLabel)}"
+        class="${cn(this.getButtonClasses(hasLabel), this.cssClass)}"
         type="${this.type}"
         ?disabled=${isDisabled}
         aria-busy=${this.loading ? 'true' : 'false'}

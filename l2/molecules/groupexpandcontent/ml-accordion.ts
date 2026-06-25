@@ -10,6 +10,7 @@ import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { customElement, state } from 'lit/decorators.js';
 import { propertyDataSource } from '/_102029_/l2/collabDecorators';
 import { MoleculeAuraElement } from '/_102033_/l2/moleculeBase.js';
+import { cn } from '/_102053_/l2/molecules/cn.js';
 
 /// **collab_i18n_start**
 const message_en = {
@@ -29,7 +30,16 @@ const messages: Record<string, MessageType> = {
 @customElement('groupexpandcontent--ml-accordion')
 export class MlAccordionMolecule extends MoleculeAuraElement {
     private msg: MessageType = messages.en;
+    // ===========================================================================
+    // SLOT TAGS
+    // ===========================================================================
     slotTags = ['Label', 'Section'];
+    // ===========================================================================
+    // PROPERTIES — From Contract
+    // ===========================================================================
+    @propertyDataSource({ type: String, attribute: 'class-name' })
+    cssClass: string = '';
+
     @propertyDataSource({ type: Boolean })
     multiple = true;
 
@@ -38,8 +48,14 @@ export class MlAccordionMolecule extends MoleculeAuraElement {
 
     @propertyDataSource({ type: Boolean })
     loading = false;
+    // ===========================================================================
+    // INTERNAL STATE
+    // ===========================================================================
     @state()
     private openSections: Set<number> = new Set();
+    // ===========================================================================
+    // LIFECYCLE
+    // ===========================================================================
     firstUpdated() {
         const sections = this.getSlots('Section');
         const initialOpen = new Set<number>();
@@ -52,6 +68,9 @@ export class MlAccordionMolecule extends MoleculeAuraElement {
         this.openSections = new Set(initialOpen);
         this.requestUpdate();
     }
+    // ===========================================================================
+    // EVENT HANDLERS
+    // ===========================================================================
     private handleToggle(index: number, title: string, isDisabled: boolean) {
         if (this.disabled || this.loading || isDisabled) return;
         const next = new Set(this.openSections);
@@ -104,6 +123,13 @@ export class MlAccordionMolecule extends MoleculeAuraElement {
         }
         return null;
     }
+    // ===========================================================================
+    // HELPERS
+    // ===========================================================================
+    private getSlotClass(tag: string): string {
+        return this.getSlotAttr(tag, 'class') || '';
+    }
+
     private getSectionContent(el: Element): string {
         const template = el.querySelector(':scope > template');
         return template ? template.innerHTML : el.innerHTML;
@@ -120,22 +146,25 @@ export class MlAccordionMolecule extends MoleculeAuraElement {
 
     private getContentClasses(isOpen: boolean): string {
         return [
-            'overflow-hidden transition-all duration-200',
+            'overflow-hidden transition-all duration-200 ml-accordion-content',
             isOpen ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0',
         ].filter(Boolean).join(' ');
     }
 
     private getChevronClasses(isOpen: boolean): string {
         return [
-            'flex items-center justify-center ml-accordion-chevron',
+            'flex items-center justify-center transition-transform duration-200 ml-accordion-chevron',
             isOpen ? 'rotate-180 ml-accordion-chevron-open' : 'rotate-0',
         ].filter(Boolean).join(' ');
     }
+    // ===========================================================================
+    // RENDER
+    // ===========================================================================
     render() {
         const lang = this.getMessageKey(messages);
         this.msg = messages[lang];
         return html`
-<div class="w-full">
+<div class="${cn('w-full', this.cssClass)}">
 ${this.renderLabel()}
 ${this.loading ? this.renderLoading() : this.renderSections()}
 </div>
@@ -145,7 +174,7 @@ ${this.loading ? this.renderLoading() : this.renderSections()}
     private renderLabel(): TemplateResult {
         if (!this.hasSlot('Label')) return html``;
         return html`
-<div class="mb-2 text-sm ml-label">
+<div class="${cn('mb-2 text-sm ml-label', this.getSlotClass('Label'))}">
 ${unsafeHTML(this.getSlotContent('Label'))}
 </div>
 `;

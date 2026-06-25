@@ -1,0 +1,109 @@
+/// <mls fileReference="_102053_/l2/demo4/sign-in.less" enhancement="enhancementStyle"/>
+
+demo4--sign-in-102053 {
+
+  // =========================================================================
+  // DESIGN TOKENS — sobrescreve defaults dos componentes
+  // =========================================================================
+
+  --ml-primary: #4f46e5;
+  --ml-on-primary: #ffffff;
+  --ml-surface: #ffffff;
+  --ml-surface-dim: #f9fafb;
+  --ml-on-surface: #111827;
+  --ml-on-surface-muted: #6b7280;
+  --ml-on-surface-faint: #9ca3af;
+  --ml-outline-variant: #e5e7eb;
+  --ml-outline-focus: #4f46e5;
+  --ml-outline-error: #ef4444;
+  --ml-error: #ef4444;
+  --ml-radius-sm: 8px;
+  --ml-radius-full: 9999px;
+  --ml-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --ml-shadow-2: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --ml-font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --ml-focus-ring-color: rgba(79, 70, 229, 0.3);
+  --ml-focus-ring-width: 3px;
+  --ml-transition: 200ms ease;
+
+  // =========================================================================
+  // LAYOUT da pagina
+  // =========================================================================
+
+  .sign-in-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f3f4f6;
+    font-family: var(--ml-font-family);
+    padding: 1rem;
+  }
+
+  .sign-in-card {
+    width: 100%;
+    max-width: 400px;
+    background: var(--ml-surface);
+    border: 1px solid var(--ml-outline-variant);
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  .sign-in-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .sign-in-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--ml-on-surface);
+    margin: 0 0 0.25rem;
+  }
+
+  .sign-in-subtitle {
+    font-size: 0.875rem;
+    color: var(--ml-on-surface-muted);
+    margin: 0;
+  }
+
+  .sign-in-error {
+    background: #fef2f2;
+    color: var(--ml-error);
+    font-size: 0.8125rem;
+    font-family: var(--ml-font-family);
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    border: 1px solid #fecaca;
+  }
+
+  .sign-in-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sign-in-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1.25rem 0;
+  }
+
+  .sign-in-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--ml-outline-variant);
+  }
+
+  .sign-in-footer-text {
+    font-size: 0.8125rem;
+    color: var(--ml-on-surface-muted);
+  }
+
+}

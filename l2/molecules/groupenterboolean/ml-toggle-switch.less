@@ -2,26 +2,58 @@
 
 groupenterboolean--ml-toggle-switch {
 
-  .ml-text { color: var(--ml-on-surface); font-family: var(--ml-font-family); }
-  .ml-label { font-family: var(--ml-font-family); font-weight: var(--ml-font-weight-medium); color: var(--ml-on-surface); }
-  .ml-helper { color: var(--ml-on-surface-muted); font-family: var(--ml-font-family); }
-  .ml-error-text { color: var(--ml-error); font-family: var(--ml-font-family); }
+  .ml-text {
+    color: var(--ml-on-surface, #1c1b1f);
+    font-family: var(--ml-font-family, system-ui, -apple-system, sans-serif);
+  }
+
+  .ml-label {
+    font-family: var(--ml-font-family, system-ui, -apple-system, sans-serif);
+    font-weight: var(--ml-font-weight-medium, 500);
+    color: var(--ml-on-surface, #1c1b1f);
+  }
+
+  .ml-helper {
+    color: var(--ml-on-surface-muted, #49454f);
+    font-family: var(--ml-font-family, system-ui, -apple-system, sans-serif);
+  }
+
+  .ml-error-text {
+    color: var(--ml-error, #ef4444);
+    font-family: var(--ml-font-family, system-ui, -apple-system, sans-serif);
+  }
 
   .ml-toggle-track {
-    background: var(--ml-outline-variant);
-    border: var(--ml-border-width) var(--ml-border-style) var(--ml-outline-variant);
-    border-radius: var(--ml-radius-full);
-    transition: background var(--ml-transition), border-color var(--ml-transition);
-    &:focus { outline: none; box-shadow: 0 0 0 var(--ml-focus-ring-width) var(--ml-focus-ring-color); }
+    background: var(--ml-outline-variant, #e2e8f0);
+    border: var(--ml-border-width, 1px) var(--ml-border-style, solid) var(--ml-outline-variant, #e2e8f0);
+    border-radius: var(--ml-radius-full, 9999px);
+    transition: background var(--ml-transition, 200ms ease), border-color var(--ml-transition, 200ms ease);
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 var(--ml-focus-ring-width, 2px) var(--ml-focus-ring-color, rgba(59, 130, 246, 0.4));
+    }
   }
-  .ml-toggle-track-on { background: var(--ml-primary); border-color: var(--ml-primary); }
-  .ml-toggle-track-error { border-color: var(--ml-outline-error); }
+
+  .ml-toggle-track-on {
+    background: var(--ml-primary, #3b82f6);
+    border-color: var(--ml-primary, #3b82f6);
+  }
+
+  .ml-toggle-track-error {
+    border-color: var(--ml-outline-error, #ef4444);
+  }
+
   .ml-toggle-thumb {
-    background: var(--ml-surface);
-    border-radius: var(--ml-radius-full);
-    transition: transform var(--ml-transition);
-    box-shadow: var(--ml-shadow-1);
+    background: var(--ml-surface, #ffffff);
+    border-radius: var(--ml-radius-full, 9999px);
+    transition: transform var(--ml-transition, 200ms ease);
+    box-shadow: var(--ml-shadow-1, 0 1px 3px rgba(0, 0, 0, 0.1));
   }
-  .ml-disabled { opacity: var(--ml-disabled-opacity); cursor: not-allowed; pointer-events: none; }
+
+  .ml-disabled {
+    opacity: var(--ml-disabled-opacity, 0.5);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
 
 }

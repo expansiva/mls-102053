@@ -1,13 +1,4 @@
-<div id="theme-root" data-design="material" data-mode="light" style="min-height:100vh;background:var(--ml-surface,#fff);">
-<div style="display:flex;gap:8px;padding:12px 32px;margin-bottom:8px;border-bottom:1px solid #ccc;flex-wrap:wrap;align-items:center;">
-  <span style="font-size:13px;font-weight:600;margin-right:8px;">Design Model:</span>
-  <button onclick="document.getElementById('theme-root').setAttribute('data-design','material')" style="padding:4px 12px;font-size:13px;cursor:pointer;border:1px solid #999;background:#eee;">Material</button>
-  <button onclick="document.getElementById('theme-root').setAttribute('data-design','flat')" style="padding:4px 12px;font-size:13px;cursor:pointer;border:1px solid #999;background:#eee;">Flat</button>
-  <button onclick="document.getElementById('theme-root').setAttribute('data-design','glass')" style="padding:4px 12px;font-size:13px;cursor:pointer;border:1px solid #999;background:#eee;">Glass</button>
-  <button onclick="document.getElementById('theme-root').setAttribute('data-design','brutalism')" style="padding:4px 12px;font-size:13px;cursor:pointer;border:1px solid #999;background:#eee;">Brutalism</button>
-  <span style="width:1px;height:24px;background:#ccc;margin:0 4px;"></span>
-  <button onclick="var r=document.getElementById('theme-root');r.setAttribute('data-mode',r.getAttribute('data-mode')==='dark'?'light':'dark');this.textContent=r.getAttribute('data-mode')==='dark'?'Light Mode':'Dark Mode'" style="padding:4px 12px;font-size:13px;cursor:pointer;border:1px solid #999;background:#eee;">Dark Mode</button>
-</div>
+<div class="bg-white dark:bg-slate-900 min-h-screen">
 <div class="mx-auto p-8 font-sans">
 <header class="text-center mb-12">
 <h1 class="text-3xl font-semibold text-slate-800 dark:text-slate-100 mb-2">Floating Text Input</h1>
