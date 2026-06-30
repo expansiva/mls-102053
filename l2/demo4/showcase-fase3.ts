@@ -29,11 +29,11 @@ export class Demo4ShowcaseFase3 extends StateLitElement {
         <h2>Button — Label com classes</h2>
         <div>
           <grouptriggeraction--ml-button-standard data-variant="primary">
-            <Label class="uppercase tracking-widest">Confirmar</Label>
+            <Label data-class="uppercase tracking-widest">Confirmar</Label>
           </grouptriggeraction--ml-button-standard>
 
           <grouptriggeraction--ml-button-standard data-variant="secondary">
-            <Label class="italic">Cancelar</Label>
+            <Label data-class="italic">Cancelar</Label>
           </grouptriggeraction--ml-button-standard>
 
           <grouptriggeraction--ml-button-standard data-variant="primary">
@@ -49,8 +49,8 @@ export class Demo4ShowcaseFase3 extends StateLitElement {
             .value=${''}
             placeholder="Digite..."
             .isEditing=${true}>
-            <Label class="uppercase text-xs tracking-widest">Nome completo</Label>
-            <Helper class="italic">Preencha seu nome como no documento</Helper>
+            <Label data-class="uppercase text-xs tracking-widest">Nome completo</Label>
+            <Helper data-class="italic">Preencha seu nome como no documento</Helper>
           </groupentertext--ml-floating-text-input>
         </div>
 
@@ -70,8 +70,8 @@ export class Demo4ShowcaseFase3 extends StateLitElement {
           <groupenterboolean--ml-toggle-switch
             .value=${this.toggleVal}
             @change=${(e: CustomEvent) => { this.toggleVal = e.detail?.value; }}>
-            <Label class="uppercase tracking-wide">Notificacoes</Label>
-            <Helper class="italic">Receber alertas por e-mail</Helper>
+            <Label data-class="uppercase tracking-wide">Notificacoes</Label>
+            <Helper data-class="italic">Receber alertas por e-mail</Helper>
           </groupenterboolean--ml-toggle-switch>
         </div>
 
@@ -88,7 +88,7 @@ export class Demo4ShowcaseFase3 extends StateLitElement {
         <h2>Accordion — Label com classes</h2>
         <div>
           <groupexpandcontent--ml-accordion multiple>
-            <Label class="uppercase tracking-widest text-xs">Configuracoes</Label>
+            <Label data-class="uppercase tracking-widest text-xs">Configuracoes</Label>
             <Section title="Geral">Configuracoes gerais do sistema.</Section>
             <Section title="Avancado">Configuracoes avancadas.</Section>
           </groupexpandcontent--ml-accordion>

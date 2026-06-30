@@ -58,7 +58,7 @@ export class Demo4SignIn extends StateLitElement {
             </groupentertext--ml-floating-text-input>
 
             <groupentertext--ml-floating-text-input
-              class-name="mt-4"
+              data-class="mt-4"
               .value=${this.password}
               input-type="password"
               placeholder="********"
@@ -73,16 +73,16 @@ export class Demo4SignIn extends StateLitElement {
                 .value=${this.remember}
                 ?disabled=${this.loading}
                 @change=${(e: CustomEvent) => { this.remember = e.detail?.value; }}>
-                <Label class="text-xs">Lembrar de mim</Label>
+                <Label data-class="text-xs">Lembrar de mim</Label>
               </groupenterboolean--ml-toggle-switch>
 
               <grouptriggeraction--ml-button-standard data-variant="link" size="sm">
-                <Label class="text-xs">Esqueci minha senha</Label>
+                <Label data-class="text-xs">Esqueci minha senha</Label>
               </grouptriggeraction--ml-button-standard>
             </div>
 
             <grouptriggeraction--ml-button-standard
-              class-name="w-full"
+              data-class="w-full"
               data-variant="primary"
               size="lg"
               ?loading=${this.loading}

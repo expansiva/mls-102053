@@ -9,7 +9,7 @@ import { customElement } from 'lit/decorators.js';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { propertyDataSource } from '/_102029_/l2/collabDecorators.js';
 import { MoleculeAuraElement } from '/_102033_/l2/moleculeBase.js';
-import { cn } from '/_102053_/l2/molecules/cn.js';
+import { cn } from '/_102033_/l2/cn.js';
 
 /// **collab_i18n_start**
 const message_en = {
@@ -40,7 +40,7 @@ export class ToggleSwitchMolecule extends MoleculeAuraElement {
   // ===========================================================================
   // PROPERTIES — From Contract
   // ===========================================================================
-  @propertyDataSource({ type: String, attribute: 'class-name' })
+  @propertyDataSource({ type: String, attribute: 'data-class' })
   cssClass: string = '';
 
   @propertyDataSource({ type: Boolean })
@@ -62,7 +62,7 @@ export class ToggleSwitchMolecule extends MoleculeAuraElement {
   // EVENT HANDLERS
   // ===========================================================================
   private getSlotClass(tag: string): string {
-    return this.getSlotAttr(tag, 'class') || '';
+    return this.getSlotAttr(tag, 'data-class') || '';
   }
 
   private handleToggle() {

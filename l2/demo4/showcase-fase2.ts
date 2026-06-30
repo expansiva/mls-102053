@@ -21,25 +21,25 @@ export class Demo4ShowcaseFase2 extends StateLitElement {
   render(): TemplateResult {
     return html`
       <div>
-        <h1>Showcase Fase 2 — class-name no host</h1>
-        <p>Componentes recebem class-name para customizar layout sem alterar o componente.</p>
+        <h1>Showcase Fase 2 — data-class no host</h1>
+        <p>Componentes recebem data-class para customizar layout sem alterar o componente.</p>
 
         <hr>
 
-        <h2>Button com class-name="w-full"</h2>
+        <h2>Button com data-class="w-full"</h2>
         <div style="max-width: 400px;">
-          <grouptriggeraction--ml-button-standard data-variant="primary" class-name="w-full">
+          <grouptriggeraction--ml-button-standard data-variant="primary" data-class="w-full">
             <Label>Botao full width</Label>
           </grouptriggeraction--ml-button-standard>
         </div>
 
-        <h2>Botoes com class-name de margem</h2>
+        <h2>Botoes com data-class de margem</h2>
         <div>
-          <grouptriggeraction--ml-button-standard data-variant="primary" class-name="mr-2">
+          <grouptriggeraction--ml-button-standard data-variant="primary" data-class="mr-2">
             <Label>Margem direita</Label>
           </grouptriggeraction--ml-button-standard>
 
-          <grouptriggeraction--ml-button-standard data-variant="secondary" class-name="mr-2">
+          <grouptriggeraction--ml-button-standard data-variant="secondary" data-class="mr-2">
             <Label>Margem direita</Label>
           </grouptriggeraction--ml-button-standard>
 
@@ -50,45 +50,45 @@ export class Demo4ShowcaseFase2 extends StateLitElement {
 
         <hr>
 
-        <h2>Input com class-name="max-w-sm"</h2>
+        <h2>Input com data-class="max-w-sm"</h2>
         <groupentertext--ml-floating-text-input
           .value=${''}
           placeholder="Largura limitada"
-          class-name="max-w-sm"
+          data-class="max-w-sm"
           .isEditing=${true}>
           <Label>Campo estreito</Label>
         </groupentertext--ml-floating-text-input>
 
-        <h2>Input com class-name="mt-6"</h2>
+        <h2>Input com data-class="mt-6"</h2>
         <groupentertext--ml-floating-text-input
           .value=${''}
           placeholder="Com espaco acima"
-          class-name="mt-6"
+          data-class="mt-6"
           .isEditing=${true}>
           <Label>Campo com margem top</Label>
         </groupentertext--ml-floating-text-input>
 
         <hr>
 
-        <h2>Toggle com class-name="p-4 border rounded-lg"</h2>
+        <h2>Toggle com data-class="p-4 border rounded-lg"</h2>
         <groupenterboolean--ml-toggle-switch
           .value=${this.toggleVal}
-          class-name="p-4 border rounded-lg"
+          data-class="p-4 border rounded-lg"
           @change=${(e: CustomEvent) => { this.toggleVal = e.detail?.value; }}>
           <Label>Toggle dentro de um box</Label>
         </groupenterboolean--ml-toggle-switch>
 
         <hr>
 
-        <h2>Accordion com class-name="max-w-lg"</h2>
-        <groupexpandcontent--ml-accordion multiple class-name="max-w-lg">
-          <Section title="Secao A">Accordion com largura limitada via class-name.</Section>
+        <h2>Accordion com data-class="max-w-lg"</h2>
+        <groupexpandcontent--ml-accordion multiple data-class="max-w-lg">
+          <Section title="Secao A">Accordion com largura limitada via data-class.</Section>
           <Section title="Secao B">Segundo item.</Section>
         </groupexpandcontent--ml-accordion>
 
         <hr>
 
-        <h2>Sem class-name (controle)</h2>
+        <h2>Sem data-class (controle)</h2>
         <grouptriggeraction--ml-button-standard data-variant="primary">
           <Label>Botao normal</Label>
         </grouptriggeraction--ml-button-standard>

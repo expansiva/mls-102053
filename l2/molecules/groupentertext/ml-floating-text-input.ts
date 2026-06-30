@@ -10,7 +10,7 @@ import { ifDefined } from 'lit/directives/if-defined.js';
 import { customElement, property, state } from 'lit/decorators.js';
 import { propertyDataSource } from '/_102029_/l2/collabDecorators.js';
 import { MoleculeAuraElement } from '/_102033_/l2/moleculeBase.js';
-import { cn } from '/_102053_/l2/molecules/cn.js';
+import { cn } from '/_102033_/l2/cn.js';
 @customElement('groupentertext--ml-floating-text-input')
 export class MlFloatingTextInputMolecule extends MoleculeAuraElement {
 // ===========================================================================
@@ -20,7 +20,7 @@ slotTags = ['Label', 'Helper', 'Prefix', 'Suffix'];
 // ===========================================================================
 // PROPERTIES — From Contract
 // ==========================================================================
-@propertyDataSource({ type: String, attribute: 'class-name' })
+@propertyDataSource({ type: String, attribute: 'data-class' })
 cssClass: string = '';
 
 @propertyDataSource({ type: String })
@@ -189,7 +189,7 @@ return true;
 // RENDER HELPERS
 // ==========================================================================
 private getSlotClass(tag: string): string {
-return this.getSlotAttr(tag, 'class') || '';
+return this.getSlotAttr(tag, 'data-class') || '';
 }
 private getLabelText(): string {
 if (this.hasSlot('Label')) {
