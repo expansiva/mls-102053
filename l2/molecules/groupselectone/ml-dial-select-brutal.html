@@ -1,0 +1,493 @@
+<div style="min-height:100vh; background: #f5f5f5;">
+<div class="mx-auto p-8 font-sans">
+<header class="text-center mb-12">
+<h1 class="text-3xl font-semibold text-black mb-2" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">Dial Select Brutal</h1>
+<span class="inline-block px-3 py-1 text-sm font-medium text-black bg-white border-2 border-black" style="border-radius: 0; box-shadow: 4px 4px 0 #000; text-transform: uppercase; letter-spacing: 0.05em;">groupSelectOne</span>
+</header>
+<aura--molecules--playground--widget-playground-state-102020 state='{"playground":{"basic":{"value":null,"error":"","placeholder":"Select priority"},"selected":{"value":"md","error":"","placeholder":"Choose size"},"errorDemo":{"value":null,"error":"Region is required","placeholder":"Select region"},"disabledDemo":{"value":"email","error":"","placeholder":""},"loadingDemo":{"value":null,"error":"","placeholder":"Loading options"},"grouped":{"value":null,"error":"","placeholder":"Filter categories"},"readonlyDemo":{"value":"pro","error":"","placeholder":""},"readonlyFlag":{"value":"plus","error":"","placeholder":""}}}'>
+</aura--molecules--playground--widget-playground-state-102020>
+<section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+
+<article class="bg-white border-2 border-black p-6" style="border-radius: 0; box-shadow: 4px 4px 0 #000;">
+<h3 class="text-lg font-semibold text-black mb-4" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">Basic</h3>
+<demo id="demo-basic">
+<groupselectone--ml-dial-select-brutal
+value="{{playground.basic.value}}"
+error="{{playground.basic.error}}"
+placeholder="{{playground.basic.placeholder}}"
+name="priority"
+is-editing="true"
+disabled="false"
+readonly="false"
+required="false"
+loading="false"
+searchable="false">
+<Label>Priority</Label>
+<Trigger>Pick one</Trigger>
+<Item value="low">Low</Item>
+<Item value="med">Medium</Item>
+<Item value="high">High</Item>
+<Helper>Choose a priority level</Helper>
+</groupselectone--ml-dial-select-brutal>
+</demo>
+<details class="mt-4">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="text-transform: uppercase; letter-spacing: 0.05em;">Properties</summary>
+<div class="mt-2 p-4 border-2 border-black bg-neutral-50" style="border-radius: 0;">
+<aura--molecules--playground--widget-playground-state-text-102020 label="value" value="{{playground.basic.value}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="error" value="{{playground.basic.error}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="placeholder" value="{{playground.basic.placeholder}}"></aura--molecules--playground--widget-playground-state-text-102020>
+</div>
+</details>
+<details class="mt-2">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="text-transform: uppercase; letter-spacing: 0.05em;">HTML</summary>
+<div class="mt-2">
+<aura--molecules--playground--widget-playground-state-preview-code-102020 target="demo-basic">
+<template>
+<groupselectone--ml-dial-select-brutal
+value="{{playground.basic.value}}"
+error="{{playground.basic.error}}"
+placeholder="{{playground.basic.placeholder}}"
+name="priority"
+is-editing="true"
+disabled="false"
+readonly="false"
+required="false"
+loading="false"
+searchable="false">
+<Label>Priority</Label>
+<Trigger>Pick one</Trigger>
+<Item value="low">Low</Item>
+<Item value="med">Medium</Item>
+<Item value="high">High</Item>
+<Helper>Choose a priority level</Helper>
+</groupselectone--ml-dial-select-brutal>
+</template>
+</aura--molecules--playground--widget-playground-state-preview-code-102020>
+</div>
+</details>
+</article>
+
+<article class="bg-white border-2 border-black p-6" style="border-radius: 0; box-shadow: 4px 4px 0 #000;">
+<h3 class="text-lg font-semibold text-black mb-4" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">Selected Value</h3>
+<demo id="demo-selected">
+<groupselectone--ml-dial-select-brutal
+value="{{playground.selected.value}}"
+error="{{playground.selected.error}}"
+placeholder="{{playground.selected.placeholder}}"
+name="size"
+is-editing="true"
+disabled="false"
+readonly="false"
+required="false"
+loading="false"
+searchable="false">
+<Label>Size</Label>
+<Item value="xs">XS</Item>
+<Item value="sm">SM</Item>
+<Item value="md">MD</Item>
+<Item value="lg">LG</Item>
+<Item value="xl">XL</Item>
+<Helper>Pre-selected medium</Helper>
+</groupselectone--ml-dial-select-brutal>
+</demo>
+<details class="mt-4">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="text-transform: uppercase; letter-spacing: 0.05em;">Properties</summary>
+<div class="mt-2 p-4 border-2 border-black bg-neutral-50" style="border-radius: 0;">
+<aura--molecules--playground--widget-playground-state-text-102020 label="value" value="{{playground.selected.value}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="error" value="{{playground.selected.error}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="placeholder" value="{{playground.selected.placeholder}}"></aura--molecules--playground--widget-playground-state-text-102020>
+</div>
+</details>
+<details class="mt-2">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="text-transform: uppercase; letter-spacing: 0.05em;">HTML</summary>
+<div class="mt-2">
+<aura--molecules--playground--widget-playground-state-preview-code-102020 target="demo-selected">
+<template>
+<groupselectone--ml-dial-select-brutal
+value="{{playground.selected.value}}"
+error="{{playground.selected.error}}"
+placeholder="{{playground.selected.placeholder}}"
+name="size"
+is-editing="true"
+disabled="false"
+readonly="false"
+required="false"
+loading="false"
+searchable="false">
+<Label>Size</Label>
+<Item value="xs">XS</Item>
+<Item value="sm">SM</Item>
+<Item value="md">MD</Item>
+<Item value="lg">LG</Item>
+<Item value="xl">XL</Item>
+<Helper>Pre-selected medium</Helper>
+</groupselectone--ml-dial-select-brutal>
+</template>
+</aura--molecules--playground--widget-playground-state-preview-code-102020>
+</div>
+</details>
+</article>
+
+<article class="bg-white border-2 border-black p-6" style="border-radius: 0; box-shadow: 4px 4px 0 #000;">
+<h3 class="text-lg font-semibold text-black mb-4" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">Error State</h3>
+<demo id="demo-error">
+<groupselectone--ml-dial-select-brutal
+value="{{playground.errorDemo.value}}"
+error="{{playground.errorDemo.error}}"
+placeholder="{{playground.errorDemo.placeholder}}"
+name="region"
+is-editing="true"
+disabled="false"
+readonly="false"
+required="true"
+loading="false"
+searchable="false">
+<Label>Region</Label>
+<Trigger>Select region</Trigger>
+<Item value="n">North</Item>
+<Item value="s">South</Item>
+<Item value="e">East</Item>
+<Item value="w">West</Item>
+</groupselectone--ml-dial-select-brutal>
+</demo>
+<details class="mt-4">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="text-transform: uppercase; letter-spacing: 0.05em;">Properties</summary>
+<div class="mt-2 p-4 border-2 border-black bg-neutral-50" style="border-radius: 0;">
+<aura--molecules--playground--widget-playground-state-text-102020 label="value" value="{{playground.errorDemo.value}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="error" value="{{playground.errorDemo.error}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="placeholder" value="{{playground.errorDemo.placeholder}}"></aura--molecules--playground--widget-playground-state-text-102020>
+</div>
+</details>
+<details class="mt-2">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="text-transform: uppercase; letter-spacing: 0.05em;">HTML</summary>
+<div class="mt-2">
+<aura--molecules--playground--widget-playground-state-preview-code-102020 target="demo-error">
+<template>
+<groupselectone--ml-dial-select-brutal
+value="{{playground.errorDemo.value}}"
+error="{{playground.errorDemo.error}}"
+placeholder="{{playground.errorDemo.placeholder}}"
+name="region"
+is-editing="true"
+disabled="false"
+readonly="false"
+required="true"
+loading="false"
+searchable="false">
+<Label>Region</Label>
+<Trigger>Select region</Trigger>
+<Item value="n">North</Item>
+<Item value="s">South</Item>
+<Item value="e">East</Item>
+<Item value="w">West</Item>
+</groupselectone--ml-dial-select-brutal>
+</template>
+</aura--molecules--playground--widget-playground-state-preview-code-102020>
+</div>
+</details>
+</article>
+
+<article class="bg-white border-2 border-black p-6" style="border-radius: 0; box-shadow: 4px 4px 0 #000;">
+<h3 class="text-lg font-semibold text-black mb-4" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">Disabled</h3>
+<demo id="demo-disabled">
+<groupselectone--ml-dial-select-brutal
+value="{{playground.disabledDemo.value}}"
+error="{{playground.disabledDemo.error}}"
+placeholder="{{playground.disabledDemo.placeholder}}"
+name="channel"
+is-editing="true"
+disabled="true"
+readonly="false"
+required="false"
+loading="false"
+searchable="false">
+<Label>Channel</Label>
+<Item value="email">Email</Item>
+<Item value="sms">SMS</Item>
+<Item value="push">Push</Item>
+<Helper>Field is disabled</Helper>
+</groupselectone--ml-dial-select-brutal>
+</demo>
+<details class="mt-4">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="text-transform: uppercase; letter-spacing: 0.05em;">Properties</summary>
+<div class="mt-2 p-4 border-2 border-black bg-neutral-50" style="border-radius: 0;">
+<aura--molecules--playground--widget-playground-state-text-102020 label="value" value="{{playground.disabledDemo.value}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="error" value="{{playground.disabledDemo.error}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="placeholder" value="{{playground.disabledDemo.placeholder}}"></aura--molecules--playground--widget-playground-state-text-102020>
+</div>
+</details>
+<details class="mt-2">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="text-transform: uppercase; letter-spacing: 0.05em;">HTML</summary>
+<div class="mt-2">
+<aura--molecules--playground--widget-playground-state-preview-code-102020 target="demo-disabled">
+<template>
+<groupselectone--ml-dial-select-brutal
+value="{{playground.disabledDemo.value}}"
+error="{{playground.disabledDemo.error}}"
+placeholder="{{playground.disabledDemo.placeholder}}"
+name="channel"
+is-editing="true"
+disabled="true"
+readonly="false"
+required="false"
+loading="false"
+searchable="false">
+<Label>Channel</Label>
+<Item value="email">Email</Item>
+<Item value="sms">SMS</Item>
+<Item value="push">Push</Item>
+<Helper>Field is disabled</Helper>
+</groupselectone--ml-dial-select-brutal>
+</template>
+</aura--molecules--playground--widget-playground-state-preview-code-102020>
+</div>
+</details>
+</article>
+
+<article class="bg-white border-2 border-black p-6" style="border-radius: 0; box-shadow: 4px 4px 0 #000;">
+<h3 class="text-lg font-semibold text-black mb-4" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">Loading</h3>
+<demo id="demo-loading">
+<groupselectone--ml-dial-select-brutal
+value="{{playground.loadingDemo.value}}"
+error="{{playground.loadingDemo.error}}"
+placeholder="{{playground.loadingDemo.placeholder}}"
+name="status"
+is-editing="true"
+disabled="false"
+readonly="false"
+required="false"
+loading="true"
+searchable="false">
+<Label>Status</Label>
+<Item value="open">Open</Item>
+<Item value="closed">Closed</Item>
+<Item value="pending">Pending</Item>
+</groupselectone--ml-dial-select-brutal>
+</demo>
+<details class="mt-4">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="text-transform: uppercase; letter-spacing: 0.05em;">Properties</summary>
+<div class="mt-2 p-4 border-2 border-black bg-neutral-50" style="border-radius: 0;">
+<aura--molecules--playground--widget-playground-state-text-102020 label="value" value="{{playground.loadingDemo.value}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="error" value="{{playground.loadingDemo.error}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="placeholder" value="{{playground.loadingDemo.placeholder}}"></aura--molecules--playground--widget-playground-state-text-102020>
+</div>
+</details>
+<details class="mt-2">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="text-transform: uppercase; letter-spacing: 0.05em;">HTML</summary>
+<div class="mt-2">
+<aura--molecules--playground--widget-playground-state-preview-code-102020 target="demo-loading">
+<template>
+<groupselectone--ml-dial-select-brutal
+value="{{playground.loadingDemo.value}}"
+error="{{playground.loadingDemo.error}}"
+placeholder="{{playground.loadingDemo.placeholder}}"
+name="status"
+is-editing="true"
+disabled="false"
+readonly="false"
+required="false"
+loading="true"
+searchable="false">
+<Label>Status</Label>
+<Item value="open">Open</Item>
+<Item value="closed">Closed</Item>
+<Item value="pending">Pending</Item>
+</groupselectone--ml-dial-select-brutal>
+</template>
+</aura--molecules--playground--widget-playground-state-preview-code-102020>
+</div>
+</details>
+</article>
+
+<article class="bg-white border-2 border-black p-6" style="border-radius: 0; box-shadow: 4px 4px 0 #000;">
+<h3 class="text-lg font-semibold text-black mb-4" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">Grouped + Searchable</h3>
+<demo id="demo-grouped">
+<groupselectone--ml-dial-select-brutal
+value="{{playground.grouped.value}}"
+error="{{playground.grouped.error}}"
+placeholder="{{playground.grouped.placeholder}}"
+name="category"
+is-editing="true"
+disabled="false"
+readonly="false"
+required="false"
+loading="false"
+searchable="true">
+<Label>Category</Label>
+<Trigger>Browse</Trigger>
+<Group label="Hardware">
+<Item value="cpu">CPU</Item>
+<Item value="gpu">GPU</Item>
+<Item value="ram">RAM</Item>
+</Group>
+<Group label="Software">
+<Item value="os">OS</Item>
+<Item value="ide">IDE</Item>
+<Item value="db" disabled>DB</Item>
+</Group>
+<Empty>No categories available</Empty>
+<Helper>Search filters dial options</Helper>
+</groupselectone--ml-dial-select-brutal>
+</demo>
+<details class="mt-4">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="text-transform: uppercase; letter-spacing: 0.05em;">Properties</summary>
+<div class="mt-2 p-4 border-2 border-black bg-neutral-50" style="border-radius: 0;">
+<aura--molecules--playground--widget-playground-state-text-102020 label="value" value="{{playground.grouped.value}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="error" value="{{playground.grouped.error}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="placeholder" value="{{playground.grouped.placeholder}}"></aura--molecules--playground--widget-playground-state-text-102020>
+</div>
+</details>
+<details class="mt-2">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="text-transform: uppercase; letter-spacing: 0.05em;">HTML</summary>
+<div class="mt-2">
+<aura--molecules--playground--widget-playground-state-preview-code-102020 target="demo-grouped">
+<template>
+<groupselectone--ml-dial-select-brutal
+value="{{playground.grouped.value}}"
+error="{{playground.grouped.error}}"
+placeholder="{{playground.grouped.placeholder}}"
+name="category"
+is-editing="true"
+disabled="false"
+readonly="false"
+required="false"
+loading="false"
+searchable="true">
+<Label>Category</Label>
+<Trigger>Browse</Trigger>
+<Group label="Hardware">
+<Item value="cpu">CPU</Item>
+<Item value="gpu">GPU</Item>
+<Item value="ram">RAM</Item>
+</Group>
+<Group label="Software">
+<Item value="os">OS</Item>
+<Item value="ide">IDE</Item>
+<Item value="db" disabled>DB</Item>
+</Group>
+<Empty>No categories available</Empty>
+<Helper>Search filters dial options</Helper>
+</groupselectone--ml-dial-select-brutal>
+</template>
+</aura--molecules--playground--widget-playground-state-preview-code-102020>
+</div>
+</details>
+</article>
+
+<article class="bg-white border-2 border-black p-6" style="border-radius: 0; box-shadow: 4px 4px 0 #000;">
+<h3 class="text-lg font-semibold text-black mb-4" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">Read-only View</h3>
+<demo id="demo-readonly">
+<groupselectone--ml-dial-select-brutal
+value="{{playground.readonlyDemo.value}}"
+error="{{playground.readonlyDemo.error}}"
+placeholder="{{playground.readonlyDemo.placeholder}}"
+name="plan"
+is-editing="false"
+disabled="false"
+readonly="false"
+required="false"
+loading="false"
+searchable="false">
+<Label>Plan</Label>
+<Item value="basic">Basic</Item>
+<Item value="pro">Pro</Item>
+<Item value="ent">Enterprise</Item>
+<Helper>View mode — not interactive</Helper>
+</groupselectone--ml-dial-select-brutal>
+</demo>
+<details class="mt-4">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="text-transform: uppercase; letter-spacing: 0.05em;">Properties</summary>
+<div class="mt-2 p-4 border-2 border-black bg-neutral-50" style="border-radius: 0;">
+<aura--molecules--playground--widget-playground-state-text-102020 label="value" value="{{playground.readonlyDemo.value}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="error" value="{{playground.readonlyDemo.error}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="placeholder" value="{{playground.readonlyDemo.placeholder}}"></aura--molecules--playground--widget-playground-state-text-102020>
+</div>
+</details>
+<details class="mt-2">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="text-transform: uppercase; letter-spacing: 0.05em;">HTML</summary>
+<div class="mt-2">
+<aura--molecules--playground--widget-playground-state-preview-code-102020 target="demo-readonly">
+<template>
+<groupselectone--ml-dial-select-brutal
+value="{{playground.readonlyDemo.value}}"
+error="{{playground.readonlyDemo.error}}"
+placeholder="{{playground.readonlyDemo.placeholder}}"
+name="plan"
+is-editing="false"
+disabled="false"
+readonly="false"
+required="false"
+loading="false"
+searchable="false">
+<Label>Plan</Label>
+<Item value="basic">Basic</Item>
+<Item value="pro">Pro</Item>
+<Item value="ent">Enterprise</Item>
+<Helper>View mode — not interactive</Helper>
+</groupselectone--ml-dial-select-brutal>
+</template>
+</aura--molecules--playground--widget-playground-state-preview-code-102020>
+</div>
+</details>
+</article>
+
+<article class="bg-white border-2 border-black p-6" style="border-radius: 0; box-shadow: 4px 4px 0 #000;">
+<h3 class="text-lg font-semibold text-black mb-4" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">Readonly Flag</h3>
+<demo id="demo-readonly-flag">
+<groupselectone--ml-dial-select-brutal
+value="{{playground.readonlyFlag.value}}"
+error="{{playground.readonlyFlag.error}}"
+placeholder="{{playground.readonlyFlag.placeholder}}"
+name="tier"
+is-editing="true"
+disabled="false"
+readonly="true"
+required="false"
+loading="false"
+searchable="false">
+<Label>Tier</Label>
+<Item value="free">Free</Item>
+<Item value="plus">Plus</Item>
+<Item value="max">Max</Item>
+<Helper>Readonly — focusable, no change</Helper>
+</groupselectone--ml-dial-select-brutal>
+</demo>
+<details class="mt-4">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="text-transform: uppercase; letter-spacing: 0.05em;">Properties</summary>
+<div class="mt-2 p-4 border-2 border-black bg-neutral-50" style="border-radius: 0;">
+<aura--molecules--playground--widget-playground-state-text-102020 label="value" value="{{playground.readonlyFlag.value}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="error" value="{{playground.readonlyFlag.error}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="placeholder" value="{{playground.readonlyFlag.placeholder}}"></aura--molecules--playground--widget-playground-state-text-102020>
+</div>
+</details>
+<details class="mt-2">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="text-transform: uppercase; letter-spacing: 0.05em;">HTML</summary>
+<div class="mt-2">
+<aura--molecules--playground--widget-playground-state-preview-code-102020 target="demo-readonly-flag">
+<template>
+<groupselectone--ml-dial-select-brutal
+value="{{playground.readonlyFlag.value}}"
+error="{{playground.readonlyFlag.error}}"
+placeholder="{{playground.readonlyFlag.placeholder}}"
+name="tier"
+is-editing="true"
+disabled="false"
+readonly="true"
+required="false"
+loading="false"
+searchable="false">
+<Label>Tier</Label>
+<Item value="free">Free</Item>
+<Item value="plus">Plus</Item>
+<Item value="max">Max</Item>
+<Helper>Readonly — focusable, no change</Helper>
+</groupselectone--ml-dial-select-brutal>
+</template>
+</aura--molecules--playground--widget-playground-state-preview-code-102020>
+</div>
+</details>
+</article>
+
+</section>
+</div>
+</div>

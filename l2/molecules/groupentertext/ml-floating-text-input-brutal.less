@@ -1,0 +1,150 @@
+/// <mls fileReference="_102053_/l2/molecules/groupentertext/ml-floating-text-input-brutal.less" enhancement="_102020_/l2/enhancementStyleAura" />
+// =============================================================================
+// FLOATING TEXT INPUT — BRUTALISM
+// Strategy D: inherited render() emits ml-* classes; this sheet is COMPLETE.
+// Hard edges, thick borders, solid offset shadow, no transparency, no blur.
+// Layout (padding, gap, flex) comes from Tailwind in the template.
+// =============================================================================
+
+groupentertext--ml-floating-text-input-brutal {
+
+  // ---- theme tokens ----
+  --ml-font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace;
+  --ml-font-weight-medium: 700;
+  --ml-radius-sm: 0;
+  --ml-border-width: 3px;
+  --ml-border-style: solid;
+  --ml-outline-variant: #000000;
+  --ml-primary: #3b82f6;
+  --ml-on-primary: #ffffff;
+  --ml-surface: #ffffff;
+  --ml-surface-dim: #f5f5f5;
+  --ml-on-surface: #000000;
+  --ml-on-surface-muted: #999999;
+  --ml-on-surface-faint: #999999;
+  --ml-error: #ef4444;
+  --ml-outline-error: #ef4444;
+  --ml-shadow-1: 4px 4px 0 #000000;
+  --ml-shadow-2: 2px 2px 0 #000000;
+  --ml-disabled-opacity: 0.4;
+  --ml-text-transform: uppercase;
+  --ml-letter-spacing: 0.05em;
+
+  // ---- text / view-mode classes ----
+
+  .ml-text {
+    color: var(--ml-on-surface, #000000);
+    font-family: var(--ml-font-family, monospace);
+    font-weight: var(--ml-font-weight-medium, 700);
+  }
+
+  .ml-text-muted {
+    color: var(--ml-on-surface-muted, #999999);
+    font-family: var(--ml-font-family, monospace);
+  }
+
+  .ml-text-faint {
+    color: var(--ml-on-surface-faint, #999999);
+    font-family: var(--ml-font-family, monospace);
+  }
+
+  .ml-label {
+    font-family: var(--ml-font-family, monospace);
+    font-weight: var(--ml-font-weight-medium, 700);
+    color: var(--ml-on-surface, #000000);
+    text-transform: var(--ml-text-transform, uppercase);
+    letter-spacing: var(--ml-letter-spacing, 0.05em);
+  }
+
+  .ml-helper {
+    color: #555555;
+    font-family: var(--ml-font-family, monospace);
+  }
+
+  .ml-error-text {
+    color: var(--ml-error, #ef4444);
+    font-family: var(--ml-font-family, monospace);
+    font-weight: var(--ml-font-weight-medium, 700);
+    text-transform: var(--ml-text-transform, uppercase);
+    letter-spacing: var(--ml-letter-spacing, 0.05em);
+  }
+
+  // ---- input container — the main interactive surface ----
+
+  .ml-input-container {
+    background: var(--ml-surface, #ffffff);
+    border: var(--ml-border-width, 3px) var(--ml-border-style, solid) var(--ml-outline-variant, #000000);
+    border-radius: var(--ml-radius-sm, 0);
+    box-shadow: var(--ml-shadow-1, 4px 4px 0 #000000);
+    transition: none;
+
+    &:focus-within {
+      box-shadow: var(--ml-shadow-2, 2px 2px 0 #000000);
+      transform: translate(2px, 2px);
+      border-color: var(--ml-outline-variant, #000000);
+    }
+  }
+
+  // error state on the container
+  .ml-input-container-error {
+    border-color: var(--ml-error, #ef4444) !important;
+    box-shadow: 4px 4px 0 var(--ml-error, #ef4444) !important;
+
+    &:focus-within {
+      box-shadow: 2px 2px 0 var(--ml-error, #ef4444) !important;
+      transform: translate(2px, 2px);
+    }
+  }
+
+  // ---- input element ----
+
+  .ml-input {
+    color: var(--ml-on-surface, #000000);
+    font-family: var(--ml-font-family, monospace);
+    font-weight: var(--ml-font-weight-medium, 700);
+
+    &::placeholder {
+      color: var(--ml-on-surface-faint, #999999);
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+  }
+
+  // ---- spinner ----
+
+  .ml-spinner {
+    border-color: var(--ml-outline-variant, #000000);
+    border-top-color: var(--ml-on-surface, #000000);
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 0;
+  }
+
+  .animate-spin {
+    animation-timing-function: steps(8);
+  }
+
+  // ---- disabled state ----
+
+  .ml-disabled {
+    opacity: var(--ml-disabled-opacity, 0.4);
+    cursor: not-allowed;
+    pointer-events: none;
+    border-color: #999999;
+    box-shadow: 3px 3px 0 #999999;
+  }
+
+  // disabled container compound selector
+  .ml-input-container.ml-disabled {
+    border-color: #999999;
+    box-shadow: 3px 3px 0 #999999;
+
+    &:focus-within {
+      box-shadow: 3px 3px 0 #999999;
+      transform: none;
+    }
+  }
+}
+
+

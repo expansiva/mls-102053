@@ -1,0 +1,511 @@
+<div style="min-height:100vh; background: #f5f5f5;">
+<div class="mx-auto p-8 font-sans">
+<header class="text-center mb-12">
+<h1 class="text-3xl font-semibold text-black mb-2" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">ML Combobox Brutal</h1>
+<span class="inline-block px-3 py-1 text-sm font-medium text-black" style="background: #fff; border: 3px solid #000; border-radius: 0; box-shadow: 4px 4px 0 #000; font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">groupSelectOne</span>
+</header>
+<aura--molecules--playground--widget-playground-state-102020 state='{"playground":{"basic":{"value":"br","placeholder":"Search or select...","error":""},"grouped":{"value":"laptops","placeholder":"Select a category...","error":""},"errorDemo":{"value":null,"placeholder":"Choose priority...","error":"Priority is required"},"disabledDemo":{"value":"north","placeholder":"Select region...","error":""},"freetext":{"value":"feature","placeholder":"Type or select a tag...","error":""},"loadingDemo":{"value":null,"placeholder":"Loading assignees...","error":""},"readonlyDemo":{"value":"in-progress","placeholder":"No status","error":""},"disabledItem":{"value":"pro","placeholder":"Choose a plan...","error":""}}}'>
+</aura--molecules--playground--widget-playground-state-102020>
+<section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+
+<article class="p-6" style="background: #fff; border: 3px solid #000; border-radius: 0; box-shadow: 4px 4px 0 #000;">
+<h3 class="text-lg font-semibold text-black mb-4" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">Basic</h3>
+<demo id="demo-basic">
+<groupselectone--ml-combobox-brutal
+value="{{playground.basic.value}}"
+placeholder="{{playground.basic.placeholder}}"
+error="{{playground.basic.error}}"
+name="country"
+is-editing="true"
+disabled="false"
+readonly="false"
+required="false"
+loading="false"
+clearable="false"
+free-text="false">
+<Label>Country</Label>
+<Helper>Select your country of residence</Helper>
+<Item value="br">Brazil</Item>
+<Item value="us">United States</Item>
+<Item value="de">Germany</Item>
+<Item value="jp">Japan</Item>
+<Empty>No countries found</Empty>
+</groupselectone--ml-combobox-brutal>
+</demo>
+<details class="mt-4">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">Properties</summary>
+<div class="mt-2 p-4" style="border: 3px solid #000; border-radius: 0; background: #f5f5f5;">
+<aura--molecules--playground--widget-playground-state-text-102020 label="value" value="{{playground.basic.value}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="placeholder" value="{{playground.basic.placeholder}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="error" value="{{playground.basic.error}}"></aura--molecules--playground--widget-playground-state-text-102020>
+</div>
+</details>
+<details class="mt-2">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">HTML</summary>
+<div class="mt-2">
+<aura--molecules--playground--widget-playground-state-preview-code-102020 target="demo-basic">
+<template>
+<groupselectone--ml-combobox-brutal
+value="{{playground.basic.value}}"
+placeholder="{{playground.basic.placeholder}}"
+error="{{playground.basic.error}}"
+name="country"
+is-editing="true"
+disabled="false"
+readonly="false"
+required="false"
+loading="false"
+clearable="false"
+free-text="false">
+<Label>Country</Label>
+<Helper>Select your country of residence</Helper>
+<Item value="br">Brazil</Item>
+<Item value="us">United States</Item>
+<Item value="de">Germany</Item>
+<Item value="jp">Japan</Item>
+<Empty>No countries found</Empty>
+</groupselectone--ml-combobox-brutal>
+</template>
+</aura--molecules--playground--widget-playground-state-preview-code-102020>
+</div>
+</details>
+</article>
+
+<article class="p-6" style="background: #fff; border: 3px solid #000; border-radius: 0; box-shadow: 4px 4px 0 #000;">
+<h3 class="text-lg font-semibold text-black mb-4" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">Grouped Options</h3>
+<demo id="demo-grouped">
+<groupselectone--ml-combobox-brutal
+value="{{playground.grouped.value}}"
+placeholder="{{playground.grouped.placeholder}}"
+error="{{playground.grouped.error}}"
+name="category"
+is-editing="true"
+disabled="false"
+readonly="false"
+required="false"
+loading="false"
+clearable="false"
+free-text="false">
+<Label>Category</Label>
+<Helper>Pick a product category</Helper>
+<Group label="Electronics">
+<Item value="phones">Phones</Item>
+<Item value="laptops">Laptops</Item>
+<Item value="tablets">Tablets</Item>
+</Group>
+<Group label="Clothing">
+<Item value="shirts">Shirts</Item>
+<Item value="shoes">Shoes</Item>
+</Group>
+<Empty>No categories available</Empty>
+</groupselectone--ml-combobox-brutal>
+</demo>
+<details class="mt-4">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">Properties</summary>
+<div class="mt-2 p-4" style="border: 3px solid #000; border-radius: 0; background: #f5f5f5;">
+<aura--molecules--playground--widget-playground-state-text-102020 label="value" value="{{playground.grouped.value}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="placeholder" value="{{playground.grouped.placeholder}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="error" value="{{playground.grouped.error}}"></aura--molecules--playground--widget-playground-state-text-102020>
+</div>
+</details>
+<details class="mt-2">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">HTML</summary>
+<div class="mt-2">
+<aura--molecules--playground--widget-playground-state-preview-code-102020 target="demo-grouped">
+<template>
+<groupselectone--ml-combobox-brutal
+value="{{playground.grouped.value}}"
+placeholder="{{playground.grouped.placeholder}}"
+error="{{playground.grouped.error}}"
+name="category"
+is-editing="true"
+disabled="false"
+readonly="false"
+required="false"
+loading="false"
+clearable="false"
+free-text="false">
+<Label>Category</Label>
+<Helper>Pick a product category</Helper>
+<Group label="Electronics">
+<Item value="phones">Phones</Item>
+<Item value="laptops">Laptops</Item>
+<Item value="tablets">Tablets</Item>
+</Group>
+<Group label="Clothing">
+<Item value="shirts">Shirts</Item>
+<Item value="shoes">Shoes</Item>
+</Group>
+<Empty>No categories available</Empty>
+</groupselectone--ml-combobox-brutal>
+</template>
+</aura--molecules--playground--widget-playground-state-preview-code-102020>
+</div>
+</details>
+</article>
+
+<article class="p-6" style="background: #fff; border: 3px solid #000; border-radius: 0; box-shadow: 4px 4px 0 #000;">
+<h3 class="text-lg font-semibold text-black mb-4" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">Error State</h3>
+<demo id="demo-error">
+<groupselectone--ml-combobox-brutal
+value="{{playground.errorDemo.value}}"
+placeholder="{{playground.errorDemo.placeholder}}"
+error="{{playground.errorDemo.error}}"
+name="priority"
+is-editing="true"
+disabled="false"
+readonly="false"
+required="true"
+loading="false"
+clearable="false"
+free-text="false">
+<Label>Priority</Label>
+<Item value="low">Low</Item>
+<Item value="medium">Medium</Item>
+<Item value="high">High</Item>
+<Item value="critical">Critical</Item>
+<Empty>No priorities</Empty>
+</groupselectone--ml-combobox-brutal>
+</demo>
+<details class="mt-4">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">Properties</summary>
+<div class="mt-2 p-4" style="border: 3px solid #000; border-radius: 0; background: #f5f5f5;">
+<aura--molecules--playground--widget-playground-state-text-102020 label="value" value="{{playground.errorDemo.value}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="placeholder" value="{{playground.errorDemo.placeholder}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="error" value="{{playground.errorDemo.error}}"></aura--molecules--playground--widget-playground-state-text-102020>
+</div>
+</details>
+<details class="mt-2">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">HTML</summary>
+<div class="mt-2">
+<aura--molecules--playground--widget-playground-state-preview-code-102020 target="demo-error">
+<template>
+<groupselectone--ml-combobox-brutal
+value="{{playground.errorDemo.value}}"
+placeholder="{{playground.errorDemo.placeholder}}"
+error="{{playground.errorDemo.error}}"
+name="priority"
+is-editing="true"
+disabled="false"
+readonly="false"
+required="true"
+loading="false"
+clearable="false"
+free-text="false">
+<Label>Priority</Label>
+<Item value="low">Low</Item>
+<Item value="medium">Medium</Item>
+<Item value="high">High</Item>
+<Item value="critical">Critical</Item>
+<Empty>No priorities</Empty>
+</groupselectone--ml-combobox-brutal>
+</template>
+</aura--molecules--playground--widget-playground-state-preview-code-102020>
+</div>
+</details>
+</article>
+
+<article class="p-6" style="background: #fff; border: 3px solid #000; border-radius: 0; box-shadow: 4px 4px 0 #000;">
+<h3 class="text-lg font-semibold text-black mb-4" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">Disabled</h3>
+<demo id="demo-disabled">
+<groupselectone--ml-combobox-brutal
+value="{{playground.disabledDemo.value}}"
+placeholder="{{playground.disabledDemo.placeholder}}"
+error="{{playground.disabledDemo.error}}"
+name="region"
+is-editing="true"
+disabled="true"
+readonly="false"
+required="false"
+loading="false"
+clearable="false"
+free-text="false">
+<Label>Region</Label>
+<Helper>This field is disabled</Helper>
+<Item value="north">North</Item>
+<Item value="south">South</Item>
+<Item value="east">East</Item>
+<Item value="west">West</Item>
+</groupselectone--ml-combobox-brutal>
+</demo>
+<details class="mt-4">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">Properties</summary>
+<div class="mt-2 p-4" style="border: 3px solid #000; border-radius: 0; background: #f5f5f5;">
+<aura--molecules--playground--widget-playground-state-text-102020 label="value" value="{{playground.disabledDemo.value}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="placeholder" value="{{playground.disabledDemo.placeholder}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="error" value="{{playground.disabledDemo.error}}"></aura--molecules--playground--widget-playground-state-text-102020>
+</div>
+</details>
+<details class="mt-2">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">HTML</summary>
+<div class="mt-2">
+<aura--molecules--playground--widget-playground-state-preview-code-102020 target="demo-disabled">
+<template>
+<groupselectone--ml-combobox-brutal
+value="{{playground.disabledDemo.value}}"
+placeholder="{{playground.disabledDemo.placeholder}}"
+error="{{playground.disabledDemo.error}}"
+name="region"
+is-editing="true"
+disabled="true"
+readonly="false"
+required="false"
+loading="false"
+clearable="false"
+free-text="false">
+<Label>Region</Label>
+<Helper>This field is disabled</Helper>
+<Item value="north">North</Item>
+<Item value="south">South</Item>
+<Item value="east">East</Item>
+<Item value="west">West</Item>
+</groupselectone--ml-combobox-brutal>
+</template>
+</aura--molecules--playground--widget-playground-state-preview-code-102020>
+</div>
+</details>
+</article>
+
+<article class="p-6" style="background: #fff; border: 3px solid #000; border-radius: 0; box-shadow: 4px 4px 0 #000;">
+<h3 class="text-lg font-semibold text-black mb-4" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">Free Text + Clearable</h3>
+<demo id="demo-freetext">
+<groupselectone--ml-combobox-brutal
+value="{{playground.freetext.value}}"
+placeholder="{{playground.freetext.placeholder}}"
+error="{{playground.freetext.error}}"
+name="tag"
+is-editing="true"
+disabled="false"
+readonly="false"
+required="false"
+loading="false"
+clearable="true"
+free-text="true">
+<Label>Custom Tag</Label>
+<Helper>Type freely or pick a suggestion</Helper>
+<Item value="bug">Bug</Item>
+<Item value="feature">Feature</Item>
+<Item value="docs">Documentation</Item>
+<Item value="chore">Chore</Item>
+<Empty>No matching tags</Empty>
+</groupselectone--ml-combobox-brutal>
+</demo>
+<details class="mt-4">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">Properties</summary>
+<div class="mt-2 p-4" style="border: 3px solid #000; border-radius: 0; background: #f5f5f5;">
+<aura--molecules--playground--widget-playground-state-text-102020 label="value" value="{{playground.freetext.value}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="placeholder" value="{{playground.freetext.placeholder}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="error" value="{{playground.freetext.error}}"></aura--molecules--playground--widget-playground-state-text-102020>
+</div>
+</details>
+<details class="mt-2">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">HTML</summary>
+<div class="mt-2">
+<aura--molecules--playground--widget-playground-state-preview-code-102020 target="demo-freetext">
+<template>
+<groupselectone--ml-combobox-brutal
+value="{{playground.freetext.value}}"
+placeholder="{{playground.freetext.placeholder}}"
+error="{{playground.freetext.error}}"
+name="tag"
+is-editing="true"
+disabled="false"
+readonly="false"
+required="false"
+loading="false"
+clearable="true"
+free-text="true">
+<Label>Custom Tag</Label>
+<Helper>Type freely or pick a suggestion</Helper>
+<Item value="bug">Bug</Item>
+<Item value="feature">Feature</Item>
+<Item value="docs">Documentation</Item>
+<Item value="chore">Chore</Item>
+<Empty>No matching tags</Empty>
+</groupselectone--ml-combobox-brutal>
+</template>
+</aura--molecules--playground--widget-playground-state-preview-code-102020>
+</div>
+</details>
+</article>
+
+<article class="p-6" style="background: #fff; border: 3px solid #000; border-radius: 0; box-shadow: 4px 4px 0 #000;">
+<h3 class="text-lg font-semibold text-black mb-4" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">Loading</h3>
+<demo id="demo-loading">
+<groupselectone--ml-combobox-brutal
+value="{{playground.loadingDemo.value}}"
+placeholder="{{playground.loadingDemo.placeholder}}"
+error="{{playground.loadingDemo.error}}"
+name="assignee"
+is-editing="true"
+disabled="false"
+readonly="false"
+required="false"
+loading="true"
+clearable="false"
+free-text="false">
+<Label>Assignee</Label>
+<Helper>Fetching options...</Helper>
+<Item value="alice">Alice</Item>
+<Item value="bob">Bob</Item>
+<Item value="carol">Carol</Item>
+</groupselectone--ml-combobox-brutal>
+</demo>
+<details class="mt-4">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">Properties</summary>
+<div class="mt-2 p-4" style="border: 3px solid #000; border-radius: 0; background: #f5f5f5;">
+<aura--molecules--playground--widget-playground-state-text-102020 label="value" value="{{playground.loadingDemo.value}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="placeholder" value="{{playground.loadingDemo.placeholder}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="error" value="{{playground.loadingDemo.error}}"></aura--molecules--playground--widget-playground-state-text-102020>
+</div>
+</details>
+<details class="mt-2">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">HTML</summary>
+<div class="mt-2">
+<aura--molecules--playground--widget-playground-state-preview-code-102020 target="demo-loading">
+<template>
+<groupselectone--ml-combobox-brutal
+value="{{playground.loadingDemo.value}}"
+placeholder="{{playground.loadingDemo.placeholder}}"
+error="{{playground.loadingDemo.error}}"
+name="assignee"
+is-editing="true"
+disabled="false"
+readonly="false"
+required="false"
+loading="true"
+clearable="false"
+free-text="false">
+<Label>Assignee</Label>
+<Helper>Fetching options...</Helper>
+<Item value="alice">Alice</Item>
+<Item value="bob">Bob</Item>
+<Item value="carol">Carol</Item>
+</groupselectone--ml-combobox-brutal>
+</template>
+</aura--molecules--playground--widget-playground-state-preview-code-102020>
+</div>
+</details>
+</article>
+
+<article class="p-6" style="background: #fff; border: 3px solid #000; border-radius: 0; box-shadow: 4px 4px 0 #000;">
+<h3 class="text-lg font-semibold text-black mb-4" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">Read-only View</h3>
+<demo id="demo-readonly">
+<groupselectone--ml-combobox-brutal
+value="{{playground.readonlyDemo.value}}"
+placeholder="{{playground.readonlyDemo.placeholder}}"
+error="{{playground.readonlyDemo.error}}"
+name="status"
+is-editing="false"
+disabled="false"
+readonly="false"
+required="false"
+loading="false"
+clearable="false"
+free-text="false">
+<Label>Status</Label>
+<Item value="open">Open</Item>
+<Item value="in-progress">In Progress</Item>
+<Item value="done">Done</Item>
+</groupselectone--ml-combobox-brutal>
+</demo>
+<details class="mt-4">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">Properties</summary>
+<div class="mt-2 p-4" style="border: 3px solid #000; border-radius: 0; background: #f5f5f5;">
+<aura--molecules--playground--widget-playground-state-text-102020 label="value" value="{{playground.readonlyDemo.value}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="placeholder" value="{{playground.readonlyDemo.placeholder}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="error" value="{{playground.readonlyDemo.error}}"></aura--molecules--playground--widget-playground-state-text-102020>
+</div>
+</details>
+<details class="mt-2">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">HTML</summary>
+<div class="mt-2">
+<aura--molecules--playground--widget-playground-state-preview-code-102020 target="demo-readonly">
+<template>
+<groupselectone--ml-combobox-brutal
+value="{{playground.readonlyDemo.value}}"
+placeholder="{{playground.readonlyDemo.placeholder}}"
+error="{{playground.readonlyDemo.error}}"
+name="status"
+is-editing="false"
+disabled="false"
+readonly="false"
+required="false"
+loading="false"
+clearable="false"
+free-text="false">
+<Label>Status</Label>
+<Item value="open">Open</Item>
+<Item value="in-progress">In Progress</Item>
+<Item value="done">Done</Item>
+</groupselectone--ml-combobox-brutal>
+</template>
+</aura--molecules--playground--widget-playground-state-preview-code-102020>
+</div>
+</details>
+</article>
+
+<article class="p-6" style="background: #fff; border: 3px solid #000; border-radius: 0; box-shadow: 4px 4px 0 #000;">
+<h3 class="text-lg font-semibold text-black mb-4" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">With Disabled Item</h3>
+<demo id="demo-disabled-item">
+<groupselectone--ml-combobox-brutal
+value="{{playground.disabledItem.value}}"
+placeholder="{{playground.disabledItem.placeholder}}"
+error="{{playground.disabledItem.error}}"
+name="plan"
+is-editing="true"
+disabled="false"
+readonly="false"
+required="true"
+loading="false"
+clearable="true"
+free-text="false">
+<Label>Plan</Label>
+<Helper>Enterprise is currently unavailable</Helper>
+<Item value="basic">Basic</Item>
+<Item value="pro">Pro</Item>
+<Item value="enterprise" disabled>Enterprise</Item>
+<Empty>No plans available</Empty>
+</groupselectone--ml-combobox-brutal>
+</demo>
+<details class="mt-4">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">Properties</summary>
+<div class="mt-2 p-4" style="border: 3px solid #000; border-radius: 0; background: #f5f5f5;">
+<aura--molecules--playground--widget-playground-state-text-102020 label="value" value="{{playground.disabledItem.value}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="placeholder" value="{{playground.disabledItem.placeholder}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="error" value="{{playground.disabledItem.error}}"></aura--molecules--playground--widget-playground-state-text-102020>
+</div>
+</details>
+<details class="mt-2">
+<summary class="cursor-pointer text-sm font-medium text-neutral-600" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace; text-transform: uppercase; letter-spacing: 0.05em;">HTML</summary>
+<div class="mt-2">
+<aura--molecules--playground--widget-playground-state-preview-code-102020 target="demo-disabled-item">
+<template>
+<groupselectone--ml-combobox-brutal
+value="{{playground.disabledItem.value}}"
+placeholder="{{playground.disabledItem.placeholder}}"
+error="{{playground.disabledItem.error}}"
+name="plan"
+is-editing="true"
+disabled="false"
+readonly="false"
+required="true"
+loading="false"
+clearable="true"
+free-text="false">
+<Label>Plan</Label>
+<Helper>Enterprise is currently unavailable</Helper>
+<Item value="basic">Basic</Item>
+<Item value="pro">Pro</Item>
+<Item value="enterprise" disabled>Enterprise</Item>
+<Empty>No plans available</Empty>
+</groupselectone--ml-combobox-brutal>
+</template>
+</aura--molecules--playground--widget-playground-state-preview-code-102020>
+</div>
+</details>
+</article>
+
+</section>
+</div>
+</div>

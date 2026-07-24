@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-07-24T17:27:40.869Z",
+  "userNotes": "",
+  "origin": {
+    "ref": "_102040_/l2/molecules/groupnavigatesteps/ml-compact-step-indicator",
+    "project": 102040,
+    "group": "groupnavigatesteps",
+    "groupCanonical": "groupNavigateSteps",
+    "shortName": "ml-compact-step-indicator",
+    "tag": "groupnavigatesteps--ml-compact-step-indicator",
+    "className": "CompactStepIndicatorMolecule",
+    "importPath": "/_102040_/l2/molecules/groupnavigatesteps/ml-compact-step-indicator.js",
+    "portal": false,
+    "mlClassInventory": [
+      "ml-compact-step-indicator",
+      "ml-disabled",
+      "ml-error-text",
+      "ml-label",
+      "ml-step-active",
+      "ml-step-completed",
+      "ml-step-loading-dot",
+      "ml-step-number",
+      "ml-text",
+      "ml-text-muted"
+    ],
+    "absoluteMlClasses": []
+  },
+  "theme": {
+    "project": 102053,
+    "ref": "_102053_/l2/skills/theme",
+    "info": {
+      "name": "glass",
+      "suffix": "-glass",
+      "displayName": "Glassmorphism",
+      "description": "Translucent blurred surfaces over a rich dark backdrop, thin light borders, soft shadows, rounded corners, smooth motion, specular light edge.",
+      "background": {
+        "kind": "dark",
+        "css": "background: linear-gradient(135deg, #0f172a 0%, #312e81 45%, #7e22ce 100%);",
+        "note": "Glass REQUIRES a rich/dark backdrop (gradient or image) — on white the blur is invisible. Text is light (rgba(255,255,255,x))."
+      }
+    }
+  },
+  "variant": {
+    "shortName": "ml-compact-step-indicator-glass",
+    "tag": "groupnavigatesteps--ml-compact-step-indicator-glass",
+    "className": "CompactStepIndicatorMoleculeGlass",
+    "group": "groupnavigatesteps",
+    "files": {
+      "ts": "l2/molecules/groupnavigatesteps/ml-compact-step-indicator-glass.ts",
+      "defs": "l2/molecules/groupnavigatesteps/ml-compact-step-indicator-glass.defs.ts",
+      "less": "l2/molecules/groupnavigatesteps/ml-compact-step-indicator-glass.less",
+      "html": "l2/molecules/groupnavigatesteps/ml-compact-step-indicator-glass.html"
+    }
+  },
+  "example": {
+    "pattern": "simple",
+    "ref": "_102055_/l2/molecules/grouptriggeraction/ml-button-standard-glass",
+    "coldStart": false
+  },
+  "userLanguage": "pt"
+}
