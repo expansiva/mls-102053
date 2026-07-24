@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-07-24T17:45:09.297Z",
+  "userNotes": "",
+  "origin": {
+    "ref": "_102040_/l2/molecules/groupenterdate/ml-compact-calendar",
+    "project": 102040,
+    "group": "groupenterdate",
+    "groupCanonical": "groupEnterDate",
+    "shortName": "ml-compact-calendar",
+    "tag": "groupenterdate--ml-compact-calendar",
+    "className": "MlCompactCalendarMolecule",
+    "importPath": "/_102040_/l2/molecules/groupenterdate/ml-compact-calendar.js",
+    "portal": false,
+    "mlClassInventory": [
+      "ml-calendar-container",
+      "ml-calendar-container--error",
+      "ml-calendar-day",
+      "ml-calendar-day--hoverable",
+      "ml-calendar-day-disabled",
+      "ml-calendar-day-outside",
+      "ml-calendar-day-selected",
+      "ml-calendar-day-today",
+      "ml-calendar-grid",
+      "ml-calendar-header",
+      "ml-calendar-header-clear",
+      "ml-calendar-nav",
+      "ml-calendar-nav-btn",
+      "ml-calendar-nav-btn--enabled",
+      "ml-compact-calendar",
+      "ml-disabled",
+      "ml-error-text",
+      "ml-helper",
+      "ml-label",
+      "ml-text",
+      "ml-text-muted"
+    ],
+    "absoluteMlClasses": []
+  },
+  "theme": {
+    "project": 102053,
+    "ref": "_102053_/l2/skills/theme",
+    "info": {
+      "name": "brutal",
+      "suffix": "-brutal",
+      "displayName": "Brutalism",
+      "description": "Solid opaque backgrounds, thick black borders, hard edges (radius 0), offset solid shadows, monospace uppercase type, no transitions.",
+      "background": {
+        "kind": "light",
+        "css": "background: #f5f5f5;",
+        "note": "Light page background; black-on-white contrast. No gradient or image required."
+      }
+    }
+  },
+  "variant": {
+    "shortName": "ml-compact-calendar-brutal",
+    "tag": "groupenterdate--ml-compact-calendar-brutal",
+    "className": "MlCompactCalendarMoleculeBrutal",
+    "group": "groupenterdate",
+    "files": {
+      "ts": "l2/molecules/groupenterdate/ml-compact-calendar-brutal.ts",
+      "defs": "l2/molecules/groupenterdate/ml-compact-calendar-brutal.defs.ts",
+      "less": "l2/molecules/groupenterdate/ml-compact-calendar-brutal.less",
+      "html": "l2/molecules/groupenterdate/ml-compact-calendar-brutal.html"
+    }
+  },
+  "example": {
+    "pattern": "simple",
+    "ref": "_102054_/l2/molecules/grouptriggeraction/ml-button-standard-brutal",
+    "coldStart": false
+  },
+  "userLanguage": "pt"
+}

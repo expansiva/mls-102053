@@ -1,0 +1,340 @@
+<div style="min-height:100vh; background: #f5f5f5;">
+<div class="mx-auto p-8 font-sans">
+<header class="text-center mb-12">
+<h1 class="text-3xl font-bold text-black mb-2 uppercase tracking-wide" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace;">Compact Calendar Brutal</h1>
+<span class="inline-block px-3 py-1 bg-black text-white text-sm font-bold uppercase tracking-wide" style="border: 3px solid #000; box-shadow: 4px 4px 0 #000; font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace;">enter + date</span>
+</header>
+<aura--molecules--playground--widget-playground-state-102020 state='{"playground":{"basic":{"value":"2026-07-24","error":"","locale":"en-US","placeholder":"Select a date"},"range":{"value":"2026-03-15","error":"","locale":"pt-BR","minDate":"2026-01-01","maxDate":"2026-12-31"},"weeks":{"value":"2026-07-24","locale":"de-DE","firstDayOfWeek":1,"showWeekNumbers":true},"errorDemo":{"value":"","error":"Date is required","locale":"en-US","required":true},"disabled":{"value":"2026-05-01","locale":"en-US","disabled":true},"loading":{"value":"2026-07-24","locale":"en-US","loading":true},"readonly":{"value":"2026-08-12","locale":"en-US","readonly":true},"view":{"value":"2026-11-03","locale":"en-US","isEditing":false}}}'>
+</aura--molecules--playground--widget-playground-state-102020>
+<section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+
+<article class="bg-white border-black p-6" style="border: 3px solid #000; border-radius: 0; box-shadow: 4px 4px 0 #000;">
+<h3 class="text-lg font-bold text-black mb-4 uppercase tracking-wide" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace;">Basic</h3>
+<demo id="demo-basic">
+<groupenterdate--ml-compact-calendar-brutal
+value="{{playground.basic.value}}"
+error="{{playground.basic.error}}"
+locale="{{playground.basic.locale}}"
+placeholder="{{playground.basic.placeholder}}"
+name="birthDate"
+is-editing="true"
+disabled="false"
+required="false">
+<Label>Date of Birth</Label>
+</groupenterdate--ml-compact-calendar-brutal>
+</demo>
+<details class="mt-4">
+<summary class="cursor-pointer text-sm font-bold text-black uppercase tracking-wide">Properties</summary>
+<div class="mt-2 p-4 bg-white" style="border: 3px solid #000; border-radius: 0;">
+<aura--molecules--playground--widget-playground-state-text-102020 label="value" value="{{playground.basic.value}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="error" value="{{playground.basic.error}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="locale" value="{{playground.basic.locale}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="placeholder" value="{{playground.basic.placeholder}}"></aura--molecules--playground--widget-playground-state-text-102020>
+</div>
+</details>
+<details class="mt-2">
+<summary class="cursor-pointer text-sm font-bold text-black uppercase tracking-wide">HTML</summary>
+<div class="mt-2">
+<aura--molecules--playground--widget-playground-state-preview-code-102020 target="demo-basic">
+<template>
+<groupenterdate--ml-compact-calendar-brutal
+value="{{playground.basic.value}}"
+error="{{playground.basic.error}}"
+locale="{{playground.basic.locale}}"
+placeholder="{{playground.basic.placeholder}}"
+name="birthDate"
+is-editing="true"
+disabled="false"
+required="false">
+<Label>Date of Birth</Label>
+</groupenterdate--ml-compact-calendar-brutal>
+</template>
+</aura--molecules--playground--widget-playground-state-preview-code-102020>
+</div>
+</details>
+</article>
+
+<article class="bg-white border-black p-6" style="border: 3px solid #000; border-radius: 0; box-shadow: 4px 4px 0 #000;">
+<h3 class="text-lg font-bold text-black mb-4 uppercase tracking-wide" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace;">Min / Max + Helper</h3>
+<demo id="demo-range">
+<groupenterdate--ml-compact-calendar-brutal
+value="{{playground.range.value}}"
+error="{{playground.range.error}}"
+locale="{{playground.range.locale}}"
+min-date="{{playground.range.minDate}}"
+max-date="{{playground.range.maxDate}}"
+is-editing="true"
+required="true">
+<Label>Due Date</Label>
+<Helper>Select a date within the current year</Helper>
+</groupenterdate--ml-compact-calendar-brutal>
+</demo>
+<details class="mt-4">
+<summary class="cursor-pointer text-sm font-bold text-black uppercase tracking-wide">Properties</summary>
+<div class="mt-2 p-4 bg-white" style="border: 3px solid #000; border-radius: 0;">
+<aura--molecules--playground--widget-playground-state-text-102020 label="value" value="{{playground.range.value}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="error" value="{{playground.range.error}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="locale" value="{{playground.range.locale}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="minDate" value="{{playground.range.minDate}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="maxDate" value="{{playground.range.maxDate}}"></aura--molecules--playground--widget-playground-state-text-102020>
+</div>
+</details>
+<details class="mt-2">
+<summary class="cursor-pointer text-sm font-bold text-black uppercase tracking-wide">HTML</summary>
+<div class="mt-2">
+<aura--molecules--playground--widget-playground-state-preview-code-102020 target="demo-range">
+<template>
+<groupenterdate--ml-compact-calendar-brutal
+value="{{playground.range.value}}"
+error="{{playground.range.error}}"
+locale="{{playground.range.locale}}"
+min-date="{{playground.range.minDate}}"
+max-date="{{playground.range.maxDate}}"
+is-editing="true"
+required="true">
+<Label>Due Date</Label>
+<Helper>Select a date within the current year</Helper>
+</groupenterdate--ml-compact-calendar-brutal>
+</template>
+</aura--molecules--playground--widget-playground-state-preview-code-102020>
+</div>
+</details>
+</article>
+
+<article class="bg-white border-black p-6" style="border: 3px solid #000; border-radius: 0; box-shadow: 4px 4px 0 #000;">
+<h3 class="text-lg font-bold text-black mb-4 uppercase tracking-wide" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace;">Week Numbers</h3>
+<demo id="demo-weeks">
+<groupenterdate--ml-compact-calendar-brutal
+value="{{playground.weeks.value}}"
+locale="{{playground.weeks.locale}}"
+first-day-of-week="{{playground.weeks.firstDayOfWeek}}"
+show-week-numbers="{{playground.weeks.showWeekNumbers}}"
+is-editing="true">
+<Label>Project Start</Label>
+<Helper>Week numbers and Monday-first week</Helper>
+</groupenterdate--ml-compact-calendar-brutal>
+</demo>
+<details class="mt-4">
+<summary class="cursor-pointer text-sm font-bold text-black uppercase tracking-wide">Properties</summary>
+<div class="mt-2 p-4 bg-white" style="border: 3px solid #000; border-radius: 0;">
+<aura--molecules--playground--widget-playground-state-text-102020 label="value" value="{{playground.weeks.value}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="locale" value="{{playground.weeks.locale}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-number-102020 label="firstDayOfWeek" value="{{playground.weeks.firstDayOfWeek}}"></aura--molecules--playground--widget-playground-state-number-102020>
+<aura--molecules--playground--widget-playground-state-boolean-102020 label="showWeekNumbers" value="{{playground.weeks.showWeekNumbers}}"></aura--molecules--playground--widget-playground-state-boolean-102020>
+</div>
+</details>
+<details class="mt-2">
+<summary class="cursor-pointer text-sm font-bold text-black uppercase tracking-wide">HTML</summary>
+<div class="mt-2">
+<aura--molecules--playground--widget-playground-state-preview-code-102020 target="demo-weeks">
+<template>
+<groupenterdate--ml-compact-calendar-brutal
+value="{{playground.weeks.value}}"
+locale="{{playground.weeks.locale}}"
+first-day-of-week="{{playground.weeks.firstDayOfWeek}}"
+show-week-numbers="{{playground.weeks.showWeekNumbers}}"
+is-editing="true">
+<Label>Project Start</Label>
+<Helper>Week numbers and Monday-first week</Helper>
+</groupenterdate--ml-compact-calendar-brutal>
+</template>
+</aura--molecules--playground--widget-playground-state-preview-code-102020>
+</div>
+</details>
+</article>
+
+<article class="bg-white border-black p-6" style="border: 3px solid #000; border-radius: 0; box-shadow: 4px 4px 0 #000;">
+<h3 class="text-lg font-bold text-black mb-4 uppercase tracking-wide" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace;">Error + Required</h3>
+<demo id="demo-error">
+<groupenterdate--ml-compact-calendar-brutal
+value="{{playground.errorDemo.value}}"
+error="{{playground.errorDemo.error}}"
+locale="{{playground.errorDemo.locale}}"
+required="{{playground.errorDemo.required}}"
+is-editing="true">
+<Label>Deadline</Label>
+</groupenterdate--ml-compact-calendar-brutal>
+</demo>
+<details class="mt-4">
+<summary class="cursor-pointer text-sm font-bold text-black uppercase tracking-wide">Properties</summary>
+<div class="mt-2 p-4 bg-white" style="border: 3px solid #000; border-radius: 0;">
+<aura--molecules--playground--widget-playground-state-text-102020 label="value" value="{{playground.errorDemo.value}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="error" value="{{playground.errorDemo.error}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="locale" value="{{playground.errorDemo.locale}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-boolean-102020 label="required" value="{{playground.errorDemo.required}}"></aura--molecules--playground--widget-playground-state-boolean-102020>
+</div>
+</details>
+<details class="mt-2">
+<summary class="cursor-pointer text-sm font-bold text-black uppercase tracking-wide">HTML</summary>
+<div class="mt-2">
+<aura--molecules--playground--widget-playground-state-preview-code-102020 target="demo-error">
+<template>
+<groupenterdate--ml-compact-calendar-brutal
+value="{{playground.errorDemo.value}}"
+error="{{playground.errorDemo.error}}"
+locale="{{playground.errorDemo.locale}}"
+required="{{playground.errorDemo.required}}"
+is-editing="true">
+<Label>Deadline</Label>
+</groupenterdate--ml-compact-calendar-brutal>
+</template>
+</aura--molecules--playground--widget-playground-state-preview-code-102020>
+</div>
+</details>
+</article>
+
+<article class="bg-white border-black p-6" style="border: 3px solid #000; border-radius: 0; box-shadow: 4px 4px 0 #000;">
+<h3 class="text-lg font-bold text-black mb-4 uppercase tracking-wide" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace;">Disabled</h3>
+<demo id="demo-disabled">
+<groupenterdate--ml-compact-calendar-brutal
+value="{{playground.disabled.value}}"
+locale="{{playground.disabled.locale}}"
+disabled="{{playground.disabled.disabled}}"
+is-editing="true">
+<Label>Locked Date</Label>
+<Helper>This field is disabled</Helper>
+</groupenterdate--ml-compact-calendar-brutal>
+</demo>
+<details class="mt-4">
+<summary class="cursor-pointer text-sm font-bold text-black uppercase tracking-wide">Properties</summary>
+<div class="mt-2 p-4 bg-white" style="border: 3px solid #000; border-radius: 0;">
+<aura--molecules--playground--widget-playground-state-text-102020 label="value" value="{{playground.disabled.value}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="locale" value="{{playground.disabled.locale}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-boolean-102020 label="disabled" value="{{playground.disabled.disabled}}"></aura--molecules--playground--widget-playground-state-boolean-102020>
+</div>
+</details>
+<details class="mt-2">
+<summary class="cursor-pointer text-sm font-bold text-black uppercase tracking-wide">HTML</summary>
+<div class="mt-2">
+<aura--molecules--playground--widget-playground-state-preview-code-102020 target="demo-disabled">
+<template>
+<groupenterdate--ml-compact-calendar-brutal
+value="{{playground.disabled.value}}"
+locale="{{playground.disabled.locale}}"
+disabled="{{playground.disabled.disabled}}"
+is-editing="true">
+<Label>Locked Date</Label>
+<Helper>This field is disabled</Helper>
+</groupenterdate--ml-compact-calendar-brutal>
+</template>
+</aura--molecules--playground--widget-playground-state-preview-code-102020>
+</div>
+</details>
+</article>
+
+<article class="bg-white border-black p-6" style="border: 3px solid #000; border-radius: 0; box-shadow: 4px 4px 0 #000;">
+<h3 class="text-lg font-bold text-black mb-4 uppercase tracking-wide" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace;">Loading</h3>
+<demo id="demo-loading">
+<groupenterdate--ml-compact-calendar-brutal
+value="{{playground.loading.value}}"
+locale="{{playground.loading.locale}}"
+loading="{{playground.loading.loading}}"
+is-editing="true">
+<Label>Fetch Date</Label>
+<Helper>Calendar shows loading state</Helper>
+</groupenterdate--ml-compact-calendar-brutal>
+</demo>
+<details class="mt-4">
+<summary class="cursor-pointer text-sm font-bold text-black uppercase tracking-wide">Properties</summary>
+<div class="mt-2 p-4 bg-white" style="border: 3px solid #000; border-radius: 0;">
+<aura--molecules--playground--widget-playground-state-text-102020 label="value" value="{{playground.loading.value}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="locale" value="{{playground.loading.locale}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-boolean-102020 label="loading" value="{{playground.loading.loading}}"></aura--molecules--playground--widget-playground-state-boolean-102020>
+</div>
+</details>
+<details class="mt-2">
+<summary class="cursor-pointer text-sm font-bold text-black uppercase tracking-wide">HTML</summary>
+<div class="mt-2">
+<aura--molecules--playground--widget-playground-state-preview-code-102020 target="demo-loading">
+<template>
+<groupenterdate--ml-compact-calendar-brutal
+value="{{playground.loading.value}}"
+locale="{{playground.loading.locale}}"
+loading="{{playground.loading.loading}}"
+is-editing="true">
+<Label>Fetch Date</Label>
+<Helper>Calendar shows loading state</Helper>
+</groupenterdate--ml-compact-calendar-brutal>
+</template>
+</aura--molecules--playground--widget-playground-state-preview-code-102020>
+</div>
+</details>
+</article>
+
+<article class="bg-white border-black p-6" style="border: 3px solid #000; border-radius: 0; box-shadow: 4px 4px 0 #000;">
+<h3 class="text-lg font-bold text-black mb-4 uppercase tracking-wide" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace;">Readonly</h3>
+<demo id="demo-readonly">
+<groupenterdate--ml-compact-calendar-brutal
+value="{{playground.readonly.value}}"
+locale="{{playground.readonly.locale}}"
+readonly="{{playground.readonly.readonly}}"
+is-editing="true">
+<Label>Confirmed Date</Label>
+<Helper>Focusable but not editable</Helper>
+</groupenterdate--ml-compact-calendar-brutal>
+</demo>
+<details class="mt-4">
+<summary class="cursor-pointer text-sm font-bold text-black uppercase tracking-wide">Properties</summary>
+<div class="mt-2 p-4 bg-white" style="border: 3px solid #000; border-radius: 0;">
+<aura--molecules--playground--widget-playground-state-text-102020 label="value" value="{{playground.readonly.value}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="locale" value="{{playground.readonly.locale}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-boolean-102020 label="readonly" value="{{playground.readonly.readonly}}"></aura--molecules--playground--widget-playground-state-boolean-102020>
+</div>
+</details>
+<details class="mt-2">
+<summary class="cursor-pointer text-sm font-bold text-black uppercase tracking-wide">HTML</summary>
+<div class="mt-2">
+<aura--molecules--playground--widget-playground-state-preview-code-102020 target="demo-readonly">
+<template>
+<groupenterdate--ml-compact-calendar-brutal
+value="{{playground.readonly.value}}"
+locale="{{playground.readonly.locale}}"
+readonly="{{playground.readonly.readonly}}"
+is-editing="true">
+<Label>Confirmed Date</Label>
+<Helper>Focusable but not editable</Helper>
+</groupenterdate--ml-compact-calendar-brutal>
+</template>
+</aura--molecules--playground--widget-playground-state-preview-code-102020>
+</div>
+</details>
+</article>
+
+<article class="bg-white border-black p-6" style="border: 3px solid #000; border-radius: 0; box-shadow: 4px 4px 0 #000;">
+<h3 class="text-lg font-bold text-black mb-4 uppercase tracking-wide" style="font-family: 'JetBrains Mono', 'SF Mono', 'Courier New', monospace;">View Mode</h3>
+<demo id="demo-view">
+<groupenterdate--ml-compact-calendar-brutal
+value="{{playground.view.value}}"
+locale="{{playground.view.locale}}"
+is-editing="{{playground.view.isEditing}}">
+<Label>Display Only</Label>
+</groupenterdate--ml-compact-calendar-brutal>
+</demo>
+<details class="mt-4">
+<summary class="cursor-pointer text-sm font-bold text-black uppercase tracking-wide">Properties</summary>
+<div class="mt-2 p-4 bg-white" style="border: 3px solid #000; border-radius: 0;">
+<aura--molecules--playground--widget-playground-state-text-102020 label="value" value="{{playground.view.value}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-text-102020 label="locale" value="{{playground.view.locale}}"></aura--molecules--playground--widget-playground-state-text-102020>
+<aura--molecules--playground--widget-playground-state-boolean-102020 label="isEditing" value="{{playground.view.isEditing}}"></aura--molecules--playground--widget-playground-state-boolean-102020>
+</div>
+</details>
+<details class="mt-2">
+<summary class="cursor-pointer text-sm font-bold text-black uppercase tracking-wide">HTML</summary>
+<div class="mt-2">
+<aura--molecules--playground--widget-playground-state-preview-code-102020 target="demo-view">
+<template>
+<groupenterdate--ml-compact-calendar-brutal
+value="{{playground.view.value}}"
+locale="{{playground.view.locale}}"
+is-editing="{{playground.view.isEditing}}">
+<Label>Display Only</Label>
+</groupenterdate--ml-compact-calendar-brutal>
+</template>
+</aura--molecules--playground--widget-playground-state-preview-code-102020>
+</div>
+</details>
+</article>
+
+</section>
+</div>
+</div>

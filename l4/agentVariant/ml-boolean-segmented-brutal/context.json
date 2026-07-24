@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-07-24T17:44:57.673Z",
+  "userNotes": "",
+  "origin": {
+    "ref": "_102040_/l2/molecules/groupenterboolean/ml-boolean-segmented",
+    "project": 102040,
+    "group": "groupenterboolean",
+    "groupCanonical": "groupEnterBoolean",
+    "shortName": "ml-boolean-segmented",
+    "tag": "groupenterboolean--ml-boolean-segmented",
+    "className": "BooleanSegmentedMolecule",
+    "importPath": "/_102040_/l2/molecules/groupenterboolean/ml-boolean-segmented.js",
+    "portal": false,
+    "mlClassInventory": [
+      "ml-boolean-segmented",
+      "ml-disabled",
+      "ml-error-text",
+      "ml-helper",
+      "ml-label",
+      "ml-segmented-option",
+      "ml-segmented-option-active",
+      "ml-segmented-option-error",
+      "ml-segmented-track",
+      "ml-text"
+    ],
+    "absoluteMlClasses": []
+  },
+  "theme": {
+    "project": 102053,
+    "ref": "_102053_/l2/skills/theme",
+    "info": {
+      "name": "brutal",
+      "suffix": "-brutal",
+      "displayName": "Brutalism",
+      "description": "Solid opaque backgrounds, thick black borders, hard edges (radius 0), offset solid shadows, monospace uppercase type, no transitions.",
+      "background": {
+        "kind": "light",
+        "css": "background: #f5f5f5;",
+        "note": "Light page background; black-on-white contrast. No gradient or image required."
+      }
+    }
+  },
+  "variant": {
+    "shortName": "ml-boolean-segmented-brutal",
+    "tag": "groupenterboolean--ml-boolean-segmented-brutal",
+    "className": "BooleanSegmentedMoleculeBrutal",
+    "group": "groupenterboolean",
+    "files": {
+      "ts": "l2/molecules/groupenterboolean/ml-boolean-segmented-brutal.ts",
+      "defs": "l2/molecules/groupenterboolean/ml-boolean-segmented-brutal.defs.ts",
+      "less": "l2/molecules/groupenterboolean/ml-boolean-segmented-brutal.less",
+      "html": "l2/molecules/groupenterboolean/ml-boolean-segmented-brutal.html"
+    }
+  },
+  "example": {
+    "pattern": "simple",
+    "ref": "_102054_/l2/molecules/grouptriggeraction/ml-button-standard-brutal",
+    "coldStart": false
+  },
+  "userLanguage": "pt"
+}

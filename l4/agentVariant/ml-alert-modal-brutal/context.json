@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-07-24T17:38:56.371Z",
+  "userNotes": "",
+  "origin": {
+    "ref": "_102040_/l2/molecules/groupnotifyuser/ml-alert-modal",
+    "project": 102040,
+    "group": "groupnotifyuser",
+    "groupCanonical": "groupNotifyUser",
+    "shortName": "ml-alert-modal",
+    "tag": "groupnotifyuser--ml-alert-modal",
+    "className": "MlAlertModalMolecule",
+    "importPath": "/_102040_/l2/molecules/groupnotifyuser/ml-alert-modal.js",
+    "portal": false,
+    "mlClassInventory": [
+      "ml-alert-modal",
+      "ml-border",
+      "ml-border-error",
+      "ml-border-focus",
+      "ml-border-info",
+      "ml-border-success",
+      "ml-border-warning",
+      "ml-disabled",
+      "ml-error-dim-bg",
+      "ml-error-text",
+      "ml-focus-ring",
+      "ml-helper",
+      "ml-hover-bg",
+      "ml-label",
+      "ml-primary-bg",
+      "ml-primary-dim-bg",
+      "ml-primary-text",
+      "ml-success-dim-bg",
+      "ml-success-text",
+      "ml-surface-bg",
+      "ml-surface-dim-bg",
+      "ml-text",
+      "ml-text-faint",
+      "ml-text-muted",
+      "ml-warning-dim-bg",
+      "ml-warning-text"
+    ],
+    "absoluteMlClasses": [
+      "ml-surface-bg"
+    ]
+  },
+  "theme": {
+    "project": 102053,
+    "ref": "_102053_/l2/skills/theme",
+    "info": {
+      "name": "brutal",
+      "suffix": "-brutal",
+      "displayName": "Brutalism",
+      "description": "Solid opaque backgrounds, thick black borders, hard edges (radius 0), offset solid shadows, monospace uppercase type, no transitions.",
+      "background": {
+        "kind": "light",
+        "css": "background: #f5f5f5;",
+        "note": "Light page background; black-on-white contrast. No gradient or image required."
+      }
+    }
+  },
+  "variant": {
+    "shortName": "ml-alert-modal-brutal",
+    "tag": "groupnotifyuser--ml-alert-modal-brutal",
+    "className": "MlAlertModalMoleculeBrutal",
+    "group": "groupnotifyuser",
+    "files": {
+      "ts": "l2/molecules/groupnotifyuser/ml-alert-modal-brutal.ts",
+      "defs": "l2/molecules/groupnotifyuser/ml-alert-modal-brutal.defs.ts",
+      "less": "l2/molecules/groupnotifyuser/ml-alert-modal-brutal.less",
+      "html": "l2/molecules/groupnotifyuser/ml-alert-modal-brutal.html"
+    }
+  },
+  "example": {
+    "pattern": "simple",
+    "ref": "_102054_/l2/molecules/grouptriggeraction/ml-button-standard-brutal",
+    "coldStart": false
+  },
+  "userLanguage": "pt"
+}

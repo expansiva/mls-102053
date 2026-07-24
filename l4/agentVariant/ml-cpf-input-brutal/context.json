@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-07-24T17:46:04.619Z",
+  "userNotes": "",
+  "origin": {
+    "ref": "_102040_/l2/molecules/groupentertext/ml-cpf-input",
+    "project": 102040,
+    "group": "groupentertext",
+    "groupCanonical": "groupEnterText",
+    "shortName": "ml-cpf-input",
+    "tag": "groupentertext--ml-cpf-input",
+    "className": "CpfInputMolecule",
+    "importPath": "/_102040_/l2/molecules/groupentertext/ml-cpf-input.js",
+    "portal": false,
+    "mlClassInventory": [
+      "ml-cpf-input",
+      "ml-disabled",
+      "ml-error-text",
+      "ml-helper",
+      "ml-input",
+      "ml-input-container",
+      "ml-input-container-error",
+      "ml-label",
+      "ml-spinner",
+      "ml-text",
+      "ml-text-faint",
+      "ml-text-muted"
+    ],
+    "absoluteMlClasses": []
+  },
+  "theme": {
+    "project": 102053,
+    "ref": "_102053_/l2/skills/theme",
+    "info": {
+      "name": "brutal",
+      "suffix": "-brutal",
+      "displayName": "Brutalism",
+      "description": "Solid opaque backgrounds, thick black borders, hard edges (radius 0), offset solid shadows, monospace uppercase type, no transitions.",
+      "background": {
+        "kind": "light",
+        "css": "background: #f5f5f5;",
+        "note": "Light page background; black-on-white contrast. No gradient or image required."
+      }
+    }
+  },
+  "variant": {
+    "shortName": "ml-cpf-input-brutal",
+    "tag": "groupentertext--ml-cpf-input-brutal",
+    "className": "CpfInputMoleculeBrutal",
+    "group": "groupentertext",
+    "files": {
+      "ts": "l2/molecules/groupentertext/ml-cpf-input-brutal.ts",
+      "defs": "l2/molecules/groupentertext/ml-cpf-input-brutal.defs.ts",
+      "less": "l2/molecules/groupentertext/ml-cpf-input-brutal.less",
+      "html": "l2/molecules/groupentertext/ml-cpf-input-brutal.html"
+    }
+  },
+  "example": {
+    "pattern": "simple",
+    "ref": "_102054_/l2/molecules/grouptriggeraction/ml-button-standard-brutal",
+    "coldStart": false
+  },
+  "userLanguage": "pt"
+}

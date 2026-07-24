@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-07-24T17:18:56.788Z",
+  "userNotes": "",
+  "origin": {
+    "ref": "_102040_/l2/molecules/groupnotifyuser/ml-alert-modal",
+    "project": 102040,
+    "group": "groupnotifyuser",
+    "groupCanonical": "groupNotifyUser",
+    "shortName": "ml-alert-modal",
+    "tag": "groupnotifyuser--ml-alert-modal",
+    "className": "MlAlertModalMolecule",
+    "importPath": "/_102040_/l2/molecules/groupnotifyuser/ml-alert-modal.js",
+    "portal": false,
+    "mlClassInventory": [
+      "ml-alert-modal",
+      "ml-border",
+      "ml-border-error",
+      "ml-border-focus",
+      "ml-border-info",
+      "ml-border-success",
+      "ml-border-warning",
+      "ml-disabled",
+      "ml-error-dim-bg",
+      "ml-error-text",
+      "ml-focus-ring",
+      "ml-helper",
+      "ml-hover-bg",
+      "ml-label",
+      "ml-primary-bg",
+      "ml-primary-dim-bg",
+      "ml-primary-text",
+      "ml-success-dim-bg",
+      "ml-success-text",
+      "ml-surface-bg",
+      "ml-surface-dim-bg",
+      "ml-text",
+      "ml-text-faint",
+      "ml-text-muted",
+      "ml-warning-dim-bg",
+      "ml-warning-text"
+    ],
+    "absoluteMlClasses": [
+      "ml-surface-bg"
+    ]
+  },
+  "theme": {
+    "project": 102053,
+    "ref": "_102053_/l2/skills/theme",
+    "info": {
+      "name": "glass",
+      "suffix": "-glass",
+      "displayName": "Glassmorphism",
+      "description": "Translucent blurred surfaces over a rich dark backdrop, thin light borders, soft shadows, rounded corners, smooth motion, specular light edge.",
+      "background": {
+        "kind": "dark",
+        "css": "background: linear-gradient(135deg, #0f172a 0%, #312e81 45%, #7e22ce 100%);",
+        "note": "Glass REQUIRES a rich/dark backdrop (gradient or image) — on white the blur is invisible. Text is light (rgba(255,255,255,x))."
+      }
+    }
+  },
+  "variant": {
+    "shortName": "ml-alert-modal-glass",
+    "tag": "groupnotifyuser--ml-alert-modal-glass",
+    "className": "MlAlertModalMoleculeGlass",
+    "group": "groupnotifyuser",
+    "files": {
+      "ts": "l2/molecules/groupnotifyuser/ml-alert-modal-glass.ts",
+      "defs": "l2/molecules/groupnotifyuser/ml-alert-modal-glass.defs.ts",
+      "less": "l2/molecules/groupnotifyuser/ml-alert-modal-glass.less",
+      "html": "l2/molecules/groupnotifyuser/ml-alert-modal-glass.html"
+    }
+  },
+  "example": {
+    "pattern": "simple",
+    "ref": "_102055_/l2/molecules/grouptriggeraction/ml-button-standard-glass",
+    "coldStart": false
+  },
+  "userLanguage": "pt"
+}

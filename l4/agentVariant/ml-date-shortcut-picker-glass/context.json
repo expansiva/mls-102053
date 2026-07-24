@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-07-24T17:19:39.869Z",
+  "userNotes": "",
+  "origin": {
+    "ref": "_102040_/l2/molecules/groupenterdate/ml-date-shortcut-picker",
+    "project": 102040,
+    "group": "groupenterdate",
+    "groupCanonical": "groupEnterDate",
+    "shortName": "ml-date-shortcut-picker",
+    "tag": "groupenterdate--ml-date-shortcut-picker",
+    "className": "DateShortcutPickerMolecule",
+    "importPath": "/_102040_/l2/molecules/groupenterdate/ml-date-shortcut-picker.js",
+    "portal": false,
+    "mlClassInventory": [
+      "ml-date-shortcut",
+      "ml-date-shortcut--hoverable",
+      "ml-date-shortcut-active",
+      "ml-date-shortcut-input",
+      "ml-date-shortcut-input--error",
+      "ml-date-shortcut-input--focused",
+      "ml-date-shortcut-input--readonly",
+      "ml-date-shortcut-picker",
+      "ml-disabled",
+      "ml-error-text",
+      "ml-helper",
+      "ml-label",
+      "ml-text",
+      "ml-text-muted"
+    ],
+    "absoluteMlClasses": []
+  },
+  "theme": {
+    "project": 102053,
+    "ref": "_102053_/l2/skills/theme",
+    "info": {
+      "name": "glass",
+      "suffix": "-glass",
+      "displayName": "Glassmorphism",
+      "description": "Translucent blurred surfaces over a rich dark backdrop, thin light borders, soft shadows, rounded corners, smooth motion, specular light edge.",
+      "background": {
+        "kind": "dark",
+        "css": "background: linear-gradient(135deg, #0f172a 0%, #312e81 45%, #7e22ce 100%);",
+        "note": "Glass REQUIRES a rich/dark backdrop (gradient or image) — on white the blur is invisible. Text is light (rgba(255,255,255,x))."
+      }
+    }
+  },
+  "variant": {
+    "shortName": "ml-date-shortcut-picker-glass",
+    "tag": "groupenterdate--ml-date-shortcut-picker-glass",
+    "className": "DateShortcutPickerMoleculeGlass",
+    "group": "groupenterdate",
+    "files": {
+      "ts": "l2/molecules/groupenterdate/ml-date-shortcut-picker-glass.ts",
+      "defs": "l2/molecules/groupenterdate/ml-date-shortcut-picker-glass.defs.ts",
+      "less": "l2/molecules/groupenterdate/ml-date-shortcut-picker-glass.less",
+      "html": "l2/molecules/groupenterdate/ml-date-shortcut-picker-glass.html"
+    }
+  },
+  "example": {
+    "pattern": "simple",
+    "ref": "_102055_/l2/molecules/grouptriggeraction/ml-button-standard-glass",
+    "coldStart": false
+  },
+  "userLanguage": "pt"
+}

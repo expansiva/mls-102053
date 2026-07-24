@@ -1,0 +1,8 @@
+{
+  "savedAt": "2026-07-24T17:19:52.892Z",
+  "planId": "v3-less",
+  "attempt": 1,
+  "ok": false,
+  "error": "position_override: these elements are positioned by the inherited render (absolute/fixed) — do NOT set position/overflow on them (it drops them into normal flow → full width / clipped arrows): ml-surface-bg. Theme appearance only; ::before/::after overlays may position themselves; use 'box-shadow: inset ...' for specular edges.",
+  "lessChars": 8077
+}

@@ -1,0 +1,7 @@
+{
+  "savedAt": "2026-07-24T17:49:12.802Z",
+  "planId": "v4-index",
+  "attempt": 1,
+  "ok": false,
+  "error": "background: index.ts page container must carry the theme background: 'background: #f5f5f5;'"
+}
