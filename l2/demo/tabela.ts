@@ -1,4 +1,4 @@
-/// <mls fileReference="_102053_/l2/demo-live-slots/tabela.ts" enhancement="_102020_/l2/enhancementAura"/>
+/// <mls fileReference="_102053_/l2/demo/tabela.ts" enhancement="_102020_/l2/enhancementAura"/>
 // P4 do todo/todo-demo-molecules-live-slots.md — regressão do caminho renderLiveSlotFrom.
 //
 // Por que esta página existe, e por que ela é REGRESSÃO e não teste novo: em 2026-08-03 o
@@ -21,7 +21,7 @@ interface Linha {
   valor: number;
 }
 
-@customElement('demo-live-slots--tabela-102053')
+@customElement('demo--tabela-102053')
 export class DemoLiveSlotsTabela extends StateLitElement {
   @state() private log: string[] = [];
   @state() private contador = 0;

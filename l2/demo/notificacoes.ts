@@ -1,4 +1,4 @@
-/// <mls fileReference="_102053_/l2/demo-live-slots/notificacoes.ts" enhancement="_102020_/l2/enhancementAura"/>
+/// <mls fileReference="_102053_/l2/demo/notificacoes.ts" enhancement="_102020_/l2/enhancementAura"/>
 // P1 do todo/todo-demo-molecules-live-slots.md — valida os slots vivos do groupNotifyUser.
 // Sem tema de propósito: o que está sob teste é o mecanismo de slot, não a aparência.
 import { html, TemplateResult } from 'lit';
@@ -18,7 +18,7 @@ import '/_102040_/l2/molecules/groupnotifyuser/ml-alert-modal';
 // Bloco B — grupo de CONTROLE, ainda no snapshot (CardAction via unsafeHTML).
 import '/_102040_/l2/molecules/groupviewmetric/ml-metric-card';
 
-@customElement('demo-live-slots--notificacoes-102053')
+@customElement('demo--notificacoes-102053')
 export class DemoLiveSlotsNotificacoes extends StateLitElement {
   /** Linhas do painel de log. É o que torna o resultado legível sem acompanhar a migração. */
   @state() private log: string[] = [];
