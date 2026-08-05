@@ -72,13 +72,18 @@ export class DemoTablePedidosDetalhe extends StateLitElement {
             Clique na seta de uma linha para ver os itens do pedido. O conteúdo é buscado só nesse
             momento — a tabela avisa que a linha abriu e a página carrega o detalhe.
           </p>
+          <p class="subtitle">
+            São 8 pedidos com 5 por página, no modo INTERNAL: a página escreve TODAS as linhas e não
+            informa <code>total-items</code>, então quem pagina é a molécula. O teste que interessa é
+            abrir um detalhe na página 1, ir para a página 2 e voltar — o conteúdo tem de continuar lá.
+          </p>
           <p class="componentes">
             <span>Componentes nesta tela:</span>
             ${COMPONENTES.map((c) => html`<code>${c}</code>`)}
           </p>
         </header>
 
-        <groupviewtable--ml-lazy-record-detail-table @rowClick=${this.onRowClick}>
+        <groupviewtable--ml-lazy-record-detail-table page-size="5" @rowClick=${this.onRowClick}>
           <Caption>Pedidos recentes</Caption>
 
           <TableHeader>
