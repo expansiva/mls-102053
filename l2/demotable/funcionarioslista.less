@@ -1,0 +1,156 @@
+/// <mls fileReference="_102053_/l2/demotable/funcionarioslista.less" enhancement="enhancementStyle"/>
+
+demotable--funcionarioslista-102053 {
+  // Layout de pagina apenas; a tabela vem do tema padrao do DS.
+  // Nada de backtick nem interpolacao neste arquivo, nem em comentario.
+  display: block;
+
+  .page { padding: 2.5rem 2rem; max-width: 76rem; margin: 0 auto; }
+
+  .head { margin-bottom: 2rem; }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ml-on-surface-muted, #49454f);
+    margin-bottom: 0.4rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--ml-on-surface, #1c1b1f);
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    color: var(--ml-on-surface-muted, #49454f);
+    line-height: 1.6;
+    max-width: 52rem;
+  }
+
+  // Quais moleculas estao em uso nesta tela. Existe para a apresentacao: a equipe ve o nome
+  // exato da tag que vai escrever no projeto dela.
+  .componentes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    font-size: 0.8125rem;
+    color: var(--ml-on-surface-muted, #49454f);
+  }
+
+  .componentes code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid var(--ml-outline-variant, #e2e8f0);
+    border-radius: 0.25rem;
+    background: var(--ml-surface-dim, #f5f5f5);
+    color: var(--ml-on-surface, #1c1b1f);
+  }
+
+  // ---------------------------------------------------------------------------
+  // LAYOUT: lista + detalhe
+  // ---------------------------------------------------------------------------
+  // Amplo: duas colunas, detalhe a direita. Estreito: o cenario TROCA — o detalhe ocupa a
+  // tela e a lista some. Sem media query em JS: quem marca o estado e a classe com-detalhe.
+  .conteudo {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  // min-width 0 e obrigatorio: sem isso o filho flex nao encolhe abaixo do conteudo, a tabela
+  // nao cede espaco para o painel e as duas colunas estouram a largura do pai.
+  .lista { flex: 1 1 auto; min-width: 0; }
+
+  .detalhe {
+    flex: 0 0 22rem;
+    position: sticky;
+    top: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--ml-outline-variant, #e2e8f0);
+    border-left: 4px solid var(--ml-primary, #3b82f6);
+    border-radius: 0.5rem;
+    background: var(--ml-surface-dim, #f5f5f5);
+  }
+
+  .detalhe-topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  .detalhe-titulo {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--ml-on-surface, #1c1b1f);
+  }
+
+  .fechar {
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--ml-on-surface-muted, #49454f);
+  }
+
+  .campos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    gap: 0.9rem 1.5rem;
+  }
+
+  .campos dt {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ml-on-surface-muted, #49454f);
+    margin-bottom: 0.15rem;
+  }
+
+  .campos dd {
+    margin: 0;
+    font-size: 0.9375rem;
+    color: var(--ml-on-surface, #1c1b1f);
+  }
+
+  // Volta para a lista. So faz sentido no cenario estreito, onde a lista esta oculta.
+  .voltar {
+    display: none;
+    border: none;
+    background: none;
+    padding: 0 0 0.75rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    color: var(--ml-primary, #3b82f6);
+  }
+
+  // ---------------------------------------------------------------------------
+  // CENARIO ESTREITO
+  // ---------------------------------------------------------------------------
+  @media (max-width: 900px) {
+    .conteudo { display: block; }
+
+    .detalhe {
+      flex: none;
+      position: static;
+      width: 100%;
+      margin-bottom: 0;
+    }
+
+    // Com o detalhe aberto, a lista sai de cena: em tela pequena as duas juntas nao cabem
+    // sem espremer a tabela ate a ilegibilidade.
+    .com-detalhe .lista { display: none; }
+
+    .voltar { display: block; }
+
+    // O X do topo vira redundante quando existe o "voltar".
+    .fechar { display: none; }
+  }
+}
