@@ -1,0 +1,72 @@
+/// <mls fileReference="_102053_/l2/demo/cards.less" enhancement="enhancementStyle"/>
+
+demo--cards-102053 {
+  // Sem tema de proposito: so o layout minimo para ler a tela.
+  // Nada de backtick nem interpolacao neste arquivo, nem em comentario:
+  // a CSS e injetada num template literal e o preview do Studio quebra.
+  display: block;
+  font-family: system-ui, -apple-system, sans-serif;
+
+  .page { padding: 2rem; max-width: 60rem; margin: 0 auto; }
+  .head { margin-bottom: 1.5rem; }
+  .title { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .subtitle { color: #475569; line-height: 1.5; }
+
+  .controles {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 0.5rem;
+    background: #f8fafc;
+  }
+
+  .btn {
+    padding: 0.4rem 0.9rem;
+    border: 1px solid #64748b;
+    border-radius: 0.375rem;
+    background: #ffffff;
+    cursor: pointer;
+    font-size: 0.875rem;
+  }
+
+  .leitura { font-size: 0.875rem; color: #334155; }
+
+  .block { margin-bottom: 2rem; }
+  .block-title { font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem; }
+
+  .esperado {
+    font-size: 0.875rem;
+    color: #7c2d12;
+    background: #fff7ed;
+    border-left: 3px solid #fb923c;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .grid { display: flex; flex-direction: column; gap: 1.5rem; }
+
+  .oculto, .vazio { color: #94a3b8; font-style: italic; }
+
+  // Texto do consumidor DENTRO do slot, irmao do botao. E o probe de reatividade:
+  // este binding tem de acompanhar o contador da pagina, aberto ou reaberto.
+  .eco {
+    margin-left: 0.75rem;
+    font-family: ui-monospace, monospace;
+    font-size: 0.8125rem;
+    padding: 0.15rem 0.4rem;
+    border: 1px dashed #94a3b8;
+    border-radius: 0.25rem;
+  }
+
+  .log {
+    margin: 0;
+    padding-left: 1.25rem;
+    font-family: ui-monospace, monospace;
+    font-size: 0.8125rem;
+    line-height: 1.7;
+  }
+}

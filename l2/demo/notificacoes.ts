@@ -111,39 +111,78 @@ export class DemoLiveSlotsNotificacoes extends StateLitElement {
    * origem, o que me fez prever que o original ficaria oculto — e a tela mostrou dois botões.
    * Entre deduzir e medir, medir.
    */
+  /** Os slot tags desta página. Serve para saber se um nó ainda está DENTRO do slot de origem. */
+  private static readonly SLOTS = 'Message, Action, Label, Value, Trend, Helper, Title, Icon';
+
   private diagnosticar(): void {
-    this.diagnosticarHost('banner MIGRADO', 'groupnotifyuser--ml-notify-banner[data-origem="controle"]');
-    this.diagnosticarHost('metric NÃO migrado', 'groupviewmetric--ml-metric-card[data-origem="controle-nao-migrado"]');
+    this.registrar('— as 3 migradas do groupNotifyUser: todas têm de dizer VIVO —');
+    this.diagnosticarHost('#1 notify-banner', 'groupnotifyuser--ml-notify-banner[data-origem="banner"]');
+    this.diagnosticarHost('#2 contextual-feedback', 'groupnotifyuser--ml-contextual-feedback[data-origem="feedback"]');
+    this.diagnosticarHost('#3 toast-notification', 'groupnotifyuser--ml-toast-notification[data-origem="toast"]');
+    this.registrar('— os controles —');
+    this.diagnosticarHost('#4 banner MISTO (Action vivo + Message snapshot)', 'groupnotifyuser--ml-notify-banner[data-origem="controle"]');
+    this.diagnosticarHost('#5 metric-card NÃO migrada', 'groupviewmetric--ml-metric-card[data-origem="controle-nao-migrado"]');
+    this.registrar('(o modal só entra no diagnóstico com ele aberto)');
+    this.diagnosticarHost('modal (se aberto)', 'groupnotifyuser--ml-alert-modal[data-origem="modal"]');
+  }
+
+  /**
+   * O veredito, e é ele que vale — não o log de clique.
+   *
+   * Reescrito em 2026-08-06, depois que a P2 mostrou que **clicar não discrimina nada**: o clone do
+   * `unsafeHTML` é um custom element de verdade, upgradeado e clicável, que dispara `action` igual
+   * ao nó vivo — e o ouvinte desta página é DELEGADO no contêiner, então captura os dois. O lado B
+   * original desta página (o botão no `<Label>` do `ml-metric-card`) **nunca discriminou**:
+   * `ml-metric-card.ts:106` também renderiza por `unsafeHTML(getSlotContent('Label'))`.
+   *
+   * O sinal que separa os dois é **o original ficar ou não retido no slot**:
+   *
+   *   slot VIVO      → o nó é MOVIDO; não sobra nada dentro do slot tag
+   *   slot SNAPSHOT  → o original FICA no slot (oculto pelo `_hideSlotTags`) e nasce um clone fora
+   *
+   * Por isso o veredito nomeia **quais slots retiveram original** — é o que permite ler o #4, que
+   * é misto de propósito: `Action` vivo e `Message` serializado na mesma molécula.
+   */
+  private veredito(retidos: string[], fora: number, total: number): string {
+    if (total === 0) return 'NENHUM nó encontrado — o conteúdo do slot não chegou ao DOM';
+    if (retidos.length === 0) {
+      return `VIVO — ${total} nó(s), nenhum retido em slot: todos foram movidos para a âncora`;
+    }
+    const nomes = [...new Set(retidos)].join(', ');
+    // Retenção com ZERO nós fora não é snapshot: snapshot sempre produz um clone. É molécula que
+    // não renderizou — a região está fechada (`visible=false`) e não há âncora para projetar.
+    // Sem esta distinção o modal fechado aparecia como SNAPSHOT, o que assustou à toa em
+    // 2026-08-06. O sinal de snapshot é original retido **E** clone fora.
+    if (fora === 0) {
+      return `NÃO PROJETADO em ${nomes} — original retido e NENHUM nó fora: a região não está renderizada (feche/abra para conferir), não é snapshot`;
+    }
+    return `SNAPSHOT em ${nomes} — original(is) retido(s) no slot + ${fora} nó(s) fora`;
   }
 
   private diagnosticarHost(rotulo: string, seletor: string): void {
     const host = this.querySelector(seletor);
     if (!host) {
-      this.registrar(`diagnóstico ${rotulo}: host não encontrado`);
+      this.registrar(`${rotulo}: host não encontrado (normal se a região estiver fechada)`);
       return;
     }
-    const moleculas = Array.from(host.querySelectorAll('grouptriggeraction--ml-button-standard'));
-    // O que o olho vê é o <button> nativo que a molécula-botão renderiza. Contar os dois
-    // separadamente é o que distingue "existe no DOM" de "aparece na tela".
-    const nativos = Array.from(host.querySelectorAll('button')).filter(
-      (b) => (b as HTMLElement).offsetParent !== null,
-    );
+    const moleculas = Array.from(
+      host.querySelectorAll('grouptriggeraction--ml-button-standard'),
+    ) as HTMLElement[];
+    const retidos: string[] = [];
+    moleculas.forEach((b) => {
+      const slot = b.closest(DemoLiveSlotsNotificacoes.SLOTS);
+      if (slot) retidos.push(`<${slot.tagName}>`);
+    });
+
     this.registrar(
-      `diagnóstico ${rotulo}: ${moleculas.length} molécula-botão no DOM · ${nativos.length} <button> VISÍVEL na tela`,
+      `${rotulo} → ${this.veredito(retidos, moleculas.length - retidos.length, moleculas.length)}`,
     );
     moleculas.forEach((b, i) => {
-      const slotAncestral = b.closest('Message, Action, Label, Value, Trend, Helper, Title, Icon');
-      const onde = slotAncestral
-        ? `slot <${slotAncestral.tagName}>`
-        : 'fora de slot (clone do unsafeHTML, ou nó projetado)';
-      const displaySlot = slotAncestral ? getComputedStyle(slotAncestral as HTMLElement).display : '—';
-      const visivel = (b as HTMLElement).offsetParent !== null;
+      const slot = b.closest(DemoLiveSlotsNotificacoes.SLOTS);
+      const onde = slot ? `retido no slot <${slot.tagName}>` : 'fora do slot';
       this.registrar(
-        `  ${i + 1}) em ${onde} · display=${displaySlot} · visível=${visivel} · origem=${b.getAttribute('data-origem')}`,
+        `  ${i + 1}) ${onde} · visível=${b.offsetParent !== null} · origem=${b.getAttribute('data-origem')}`,
       );
-    });
-    nativos.forEach((b, i) => {
-      this.registrar(`  <button> visível ${i + 1}: "${(b.textContent || '').trim().slice(0, 40)}"`);
     });
   }
 
@@ -158,13 +197,22 @@ export class DemoLiveSlotsNotificacoes extends StateLitElement {
           <h1 class="title">Slots vivos — groupNotifyUser (P1)</h1>
           <p class="subtitle">
             Cada botão abaixo é uma molécula (ml-button-standard) dentro do slot de outra molécula.
-            O log só registra o BOTÃO se ele estiver vivo.
+          </p>
+          <p class="subtitle">
+            <strong>O veredito sai do botão <code>diagnosticar DOM</code>, não do clique.</strong>
+            Corrigido em 2026-08-06: a régua original desta página — "o botão do lado B não pode
+            disparar" — <strong>estava errada</strong>. O clone do caminho de snapshot é um custom
+            element de verdade, upgradeado e clicável, e dispara <code>action</code> igual ao nó
+            vivo; o ouvinte daqui é delegado no contêiner e captura os dois. O sinal real é
+            <strong>o original ficar ou não retido no slot</strong>: slot vivo MOVE o nó e não deixa
+            nada para trás; snapshot mantém o original oculto e cria um clone.
           </p>
         </header>
 
         ${this.renderControles()}
         ${this.renderMigradas()}
         ${this.renderControle()}
+        ${this.renderSondaOnda2()}
         ${this.renderModal()}
         ${this.renderLog()}
       </div>
@@ -306,6 +354,46 @@ export class DemoLiveSlotsNotificacoes extends StateLitElement {
         <Message>Confirma a exclusão?</Message>
         <Action>${this.conteudoSlot('modal-btn', '#5 Excluir')}</Action>
       </groupnotifyuser--ml-alert-modal>
+    `;
+  }
+
+  /**
+   * SONDA DA ONDA 2 — a pergunta que decide se ela vale 119 moléculas.
+   *
+   * O controle justifica a Onda 2 com "reatividade de graça: o binding do consumidor passa a
+   * atualizar no lugar, em vez de congelar no primeiro parse". Só que o `moleculeBase` observa
+   * `characterData` com `subtree: true` e re-renderiza quando a mutação cai DENTRO de um slot tag
+   * — então texto em `<Label>` talvez já atualize hoje, com o atraso do debounce de 16 ms, sem
+   * migração nenhuma.
+   *
+   * Aqui o MESMO contador aparece em três lugares de uma molécula NÃO migrada: dentro do `<Label>`
+   * (slot serializado), dentro do `<Value>` (idem) e fora dela, como referência. Aperte
+   * `contador +1` e compare.
+   */
+  private renderSondaOnda2(): TemplateResult {
+    return html`
+      <section class="block">
+        <h2 class="block-title">Sonda — a Onda 2 entrega mesmo reatividade?</h2>
+        <p class="esperado">
+          O <code>ml-metric-card</code> NÃO foi migrado: <code>Label</code> e <code>Value</code>
+          passam por <code>unsafeHTML(getSlotContent(...))</code>. Aperte
+          <code>contador +1</code> algumas vezes e compare os três números.
+          <br />
+          • Se os três andarem juntos → <strong>o texto do slot serializado JÁ é reativo</strong>
+          (o observer re-snapshota), e o ganho principal da Onda 2 não existe.
+          <br />
+          • Se só o de fora andar → o binding realmente congela, e a Onda 2 se justifica.
+        </p>
+        <div class="grid">
+          <groupviewmetric--ml-metric-card data-origem="sonda-onda2">
+            <Label>#6 no slot Label: contador ${this.contador}</Label>
+            <Value>no slot Value: ${this.contador}</Value>
+          </groupviewmetric--ml-metric-card>
+          <p class="leitura">
+            referência, fora de qualquer slot: contador <strong>${this.contador}</strong>
+          </p>
+        </div>
+      </section>
     `;
   }
 
